@@ -1,0 +1,395 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jockey+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+/* Variables */
+$yellow: #edce09;
+$brown: #a16b0b;
+$black: #1f1f1f;
+$grey: #d6d7d9;
+$white: #fff;
+$background: #f3ffff;
+
+* {
+    font-family: "Jockey One";
+}
+
+html {
+    background-image: url("../public/img/grass.jpg");
+    background-repeat: repeat;
+    /* background-color: #1f1f1f; */
+}
+
+body {
+    width: 1600px;
+    margin: 0 auto;
+    background-color: $black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+/**
+ * ^NAVIGATION BAR
+ */
+.nav {
+    /* border: solid 2px $yellow; */
+    height: 140px;
+    width: 100%;
+    background-color: $background;
+    /* position: fixed; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+        height: 140px;
+        margin-left: 5%;
+    }
+    &-section {
+        height: 100%;
+        display: flex;
+        &-link {
+            width: 220px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: $black;
+            font-size: 26px;
+            font-weight: 500;
+            font-family: "Jockey One";
+            transition: all;
+            &:hover {
+                color: $yellow;
+                /* font-size: 28px; */
+                background-color: $black;
+                transition: all 0.15s ease-in;
+            }
+            &:active {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+/**
+ * ^TITLE
+ */
+.title {
+    height: 300px;
+    width: 100%;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-text {
+        font-size: 94px;
+        font-weight: 700;
+        font-family: "Graduate", sans-serif;
+        letter-spacing: -2px;
+        word-spacing: -10px;
+        color: $yellow;
+        margin: auto;
+    }
+}
+
+/* Fading Opening Transitions  */
+@keyframes slideLeft {
+    0% { transform: translateX(-50%); opacity: 0; }
+    100% { transform: translateX(0%); }
+}
+@-webkit-keyframes slideLeft {
+    0% { -webkit-transform: translateX(-50%); }
+    100% { -webkit-transform: translateX(0%); }
+}
+.animate-slide-left {
+    /* Boolean Class For Animating (True/False) */
+    /* opacity: 1; */
+    will-change: transform;
+    animation-name: slideLeft;
+    animation-duration: 900ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideLeft;
+    -webkit-animation-duration: 900ms;
+    -moz-animation-name: slideLeft;
+    -moz-animation-duration: 900ms;
+    -o-animation-name: slideLeft;
+    -o-animation-duration: 900ms;
+}
+
+/**
+ * ^Main Section
+ */
+.section {
+    /* border: solid 2px $black; */
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 0;
+    &-info {
+        /* border: 2px $yellow solid; */
+        height: 500px;
+        width: 26%;
+        font-family: "Jockey One";
+        font-size: 26px;
+        line-height: 40px;
+        color: $grey;
+        border-radius: 1rem;
+        padding: 20px;
+        margin: 0;
+        /* opacity: 0; */
+    }
+    &-img {
+        height: 700px;
+        width: 700px;
+        /* border-radius: 1rem; */
+        /* opacity: 0; */
+    }
+}
+.section2 {
+    &-group {
+        width: 26%;
+        &-title {
+            color: $yellow;
+            font-size: 40px;
+            font-weight: 500;
+            font-family: "Jockey One", sans-serif;
+            text-align: center;
+            margin: 20px 0;
+        }
+        &-info {
+            height: 560px;
+            font-family: "Jockey One";
+            font-size: 26px;
+            line-height: 40px;
+            color: $grey;
+            border-radius: 1rem;
+            padding: 20px;
+            margin: 0;
+            /* opacity: 0; */
+        }
+    }
+}
+
+/* Fading Opening Transitions  */
+@keyframes slideIn {
+    0% { transform: translateY(45%); opacity: 0; }
+    
+    100% { transform: translateY(0%); opacity: 1;}
+}
+@-webkit-keyframes slideIn {
+    0% { -webkit-transform: translateY(45%); }
+    100% { -webkit-transform: translateY(0%); }
+}
+.animate {
+    /* Boolean Class For Animating (True/False) */
+    opacity: 1;
+    will-change: transform;
+    animation-name: slideIn;
+    
+    /* animation-delay: 300ms; */
+    animation-duration: 1100ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1100ms;
+    -moz-animation-name: slideIn;
+    -moz-animation-duration: 1100ms;
+    -o-animation-name: slideIn;
+    -o-animation-duration: 1100ms;
+}
+
+/**
+ * ^OWNER SECTION
+ */
+.owner {
+    height: 65vh;
+    color: $background;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-container {
+        width: 800px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* &-img {
+
+        } */
+        /* &-title {
+            color: none;
+        } */
+    }
+}
+
+
+/**
+ * ^CONTACT SECTION
+ */
+.contact {
+    height: 65vh;
+    width: 100%;
+    color: $background;
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-title {
+        /* border: 2px $yellow solid; */
+        color: $yellow;
+        font-size: 60px;
+        font-weight: 500;
+        font-family: "Jockey One", sans-serif;
+        text-align: center;
+        margin: 20px 0;
+    }
+    &-info {
+        /* border: 2px $yellow solid; */
+        height: 300px;
+        width: 50%;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        /* background-color: #000000; */
+        &-details {
+            /* border: 2px $yellow solid; */
+            /* height: 100%; */
+            width: 40%;
+            font-size: 22px;
+            line-height: 40px;
+            text-align: center;
+            margin: 10px;
+            /* background-color: #000000; */
+        }
+        &-times {
+            /* border: 2px $yellow solid; */
+            /* height: 100%; */
+            width: 40%;
+            font-size: 22px;
+            line-height: 40px;
+            text-align: center;
+            margin: 10px;
+            /* background-color: #000000; */
+        }
+    }
+}
+
+.line {
+    color: $yellow;
+}
+
+/**
+ * ^PAGE FOOTER
+ */
+.footer {
+    /* border: 1px $yellow solid; */
+    height: 240px;
+    width: 100%;
+    color: $white;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    &-info {
+        /* Information Section */
+        /* border: 1px $yellow solid; */
+        height: 160px;
+        width: 600px;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &-heading {
+            color: $yellow;
+            margin: 14px 0;
+            font-family: "Play", sans-serif;
+        }
+        &-facebook {
+            /* border: 1px $yellow solid; */
+            /* width: 100%; */
+            height: 22px;
+            font-size: 20px;
+            color: $white;
+            font-family: "Play", sans-serif;
+            text-decoration: underline transparent;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                color: $yellow;
+                text-decoration: underline $yellow;
+            }
+            &:nth-of-type(1):before {
+                font-family: FontAwesome;
+                content: "\f09a";
+            }
+        }
+        &-phone {
+            /* border: 1px $yellow solid; */
+            height: 22px;
+            font-size: 20px;
+            color: $white;
+            font-family: "Play", sans-serif;
+            text-decoration: underline transparent;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                color: $yellow;
+                text-decoration: underline $yellow;
+            }
+            &:nth-of-type(2):before {
+                font-family: FontAwesome;
+                content: "\f095";
+            }
+        }
+        &-location {
+            /* border: 1px $yellow solid; */
+            height: 22px;
+            font-size: 20px;
+            color: $white;
+            font-family: "Play", sans-serif;
+            text-decoration: underline transparent;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                color: $yellow;
+                text-decoration: underline $yellow;
+            }
+            &:nth-of-type(3):before {
+                font-family: FontAwesome;
+                content: "\f041";
+            }
+        }
+    }
+    &-copyright {
+        /* Copyright Tag */
+        /* border: 1px $yellow solid; */
+        float: right;
+        color: $background;
+        width: 400px;
+        margin: 0;
+        text-align: center;
+        font-family: "Play", sans-serif;
+    }
+}
