@@ -12,7 +12,7 @@ function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.6,
+        threshold: 0.4,
     }
 
     // useInView hooks for each project that returns
@@ -46,7 +46,7 @@ function Main() {
                 <img className="section-img" src="./img/interior.jpg" alt="Building Interior"></img>
                 <div className="section2-group">
                     <h2 className="section2-group-title">
-                        About
+                        About Us
                     </h2>
                     <p className="section2-group-info">
                         &emsp;Here at Super Swing, we are proud to offer detailed training in baseball/softball and how to apply

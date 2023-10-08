@@ -18,15 +18,17 @@ $background: #f3ffff;
 }
 
 html {
-    background-image: url("../public/img/grass.jpg");
-    background-repeat: repeat;
-    /* background-color: #1f1f1f; */
+    /* background-image: url("../public/img/grass.jpg");
+    background-repeat: repeat; */
+    background-color: #1f1f1f;
+    scrollbar-color: $background $black;
 }
 
 body {
-    width: 1600px;
+    width: 100%;
     margin: 0 auto;
     background-color: $black;
+    /* background-image: linear-gradient(180deg, $background 2%, $black 98%); */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
         "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -40,15 +42,22 @@ a {
     text-decoration: none;
 }
 
+hr {
+    color: $yellow;
+}
+
 /**
  * ^NAVIGATION BAR
  */
 .nav {
     /* border: solid 2px $yellow; */
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     height: 140px;
-    width: 100%;
+    width: 1600px;
     background-color: $background;
     /* position: fixed; */
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -91,7 +100,8 @@ a {
 .title {
     height: 300px;
     width: 100%;
-    background-color: $black;
+    /* background-color: $black; */
+    /* background-image: linear-gradient(180deg, $background, 30%, $black); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,11 +118,11 @@ a {
 
 /* Fading Opening Transitions  */
 @keyframes slideLeft {
-    0% { transform: translateX(-50%); opacity: 0; }
+    0% { transform: translateX(-20%); opacity: 0; }
     100% { transform: translateX(0%); }
 }
 @-webkit-keyframes slideLeft {
-    0% { -webkit-transform: translateX(-50%); }
+    0% { -webkit-transform: translateX(-20%); }
     100% { -webkit-transform: translateX(0%); }
 }
 .animate-slide-left {
@@ -137,12 +147,14 @@ a {
 .section {
     /* border: solid 2px $black; */
     height: 70vh;
-    width: 100%;
+    width: 1600px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     opacity: 0;
+    /* padding: 0 20px; */
+    margin: auto;
     &-info {
         /* border: 2px $yellow solid; */
         height: 500px;
@@ -152,13 +164,13 @@ a {
         line-height: 40px;
         color: $grey;
         border-radius: 1rem;
-        padding: 20px;
+        /* padding: 20px; */
         margin: 0;
         /* opacity: 0; */
     }
     &-img {
         height: 700px;
-        width: 700px;
+        width: 800px;
         /* border-radius: 1rem; */
         /* opacity: 0; */
     }
@@ -181,7 +193,7 @@ a {
             line-height: 40px;
             color: $grey;
             border-radius: 1rem;
-            padding: 20px;
+            /* padding: 20px; */
             margin: 0;
             /* opacity: 0; */
         }
@@ -190,12 +202,12 @@ a {
 
 /* Fading Opening Transitions  */
 @keyframes slideIn {
-    0% { transform: translateY(45%); opacity: 0; }
-    
+    0% { transform: translateY(10%); opacity: 0; }
+    15% { opacity: 0; }
     100% { transform: translateY(0%); opacity: 1;}
 }
 @-webkit-keyframes slideIn {
-    0% { -webkit-transform: translateY(45%); }
+    0% { -webkit-transform: translateY(10%); }
     100% { -webkit-transform: translateY(0%); }
 }
 .animate {
@@ -222,7 +234,7 @@ a {
 .owner {
     height: 65vh;
     color: $background;
-    background-color: $black;
+    /* background-color: $black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,12 +245,13 @@ a {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-size: 20px;
         /* &-img {
 
         } */
-        /* &-title {
-            color: none;
-        } */
+        &-title {
+            font-size: 32px;
+        }
     }
 }
 
@@ -251,6 +264,7 @@ a {
     width: 100%;
     color: $background;
     background-color: $black;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -267,10 +281,10 @@ a {
     &-info {
         /* border: 2px $yellow solid; */
         height: 300px;
-        width: 50%;
+        width: 800px;
         display: inline-flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         /* background-color: #000000; */
         &-details {
@@ -280,7 +294,7 @@ a {
             font-size: 22px;
             line-height: 40px;
             text-align: center;
-            margin: 10px;
+            /* margin: 10px; */
             /* background-color: #000000; */
         }
         &-times {
@@ -290,15 +304,13 @@ a {
             font-size: 22px;
             line-height: 40px;
             text-align: center;
-            margin: 10px;
+            /* margin: 10px; */
             /* background-color: #000000; */
         }
     }
 }
 
-.line {
-    color: $yellow;
-}
+
 
 /**
  * ^PAGE FOOTER
@@ -307,8 +319,11 @@ a {
     /* border: 1px $yellow solid; */
     height: 240px;
     width: 100%;
-    color: $white;
+    color: $background;
     background-color: black;
+    /* background-image: linear-gradient(180deg, $black 2%, 35%, black); */
+    /* border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -334,7 +349,7 @@ a {
             /* width: 100%; */
             height: 22px;
             font-size: 20px;
-            color: $white;
+            color: $background;
             font-family: "Play", sans-serif;
             text-decoration: underline transparent;
             transition: all 0.2s ease-in-out;
@@ -351,7 +366,7 @@ a {
             /* border: 1px $yellow solid; */
             height: 22px;
             font-size: 20px;
-            color: $white;
+            color: $background;
             font-family: "Play", sans-serif;
             text-decoration: underline transparent;
             transition: all 0.2s ease-in-out;
@@ -368,7 +383,7 @@ a {
             /* border: 1px $yellow solid; */
             height: 22px;
             font-size: 20px;
-            color: $white;
+            color: $background;
             font-family: "Play", sans-serif;
             text-decoration: underline transparent;
             transition: all 0.2s ease-in-out;
