@@ -5,7 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
-/* Variables */
+/**
+ *  ^VARIABLES AND COLORS
+ */
 $yellow: #edce09;
 $brown: #a16b0b;
 $black: #1f1f1f;
@@ -13,6 +15,10 @@ $grey: #d6d7d9;
 $white: #fff;
 $background: #f3ffff;
 
+
+/**
+ *  ^GENERAL STYLES
+ */
 * {
     font-family: "Jockey One";
 }
@@ -20,18 +26,22 @@ $background: #f3ffff;
 html {
     /* background-image: url("../public/img/grass.jpg");
     background-repeat: repeat; */
-    background-color: #1f1f1f;
+    background-color: $black;
     scrollbar-color: $background $black;
 }
 
 body {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     background-color: $black;
     /* background-image: linear-gradient(180deg, $background 2%, $black 98%); */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
         "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
+}
+
+main {
+    overflow: hidden;
 }
 
 code {
@@ -46,29 +56,43 @@ hr {
     color: $yellow;
 }
 
+/* ======================================================================== */
 /**
  * ^NAVIGATION BAR
  */
+.top-border {
+    height: 10px;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+    background-color: $yellow;
+    border: 0;
+    position: fixed;
+}
+.scrolled {
+    background-color: rgb(227, 227, 227);
+}
 .nav {
-    /* border: solid 2px $yellow; */
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    height: 140px;
-    width: 1600px;
+    height: 90px;
+    top: 4px;
+    z-index: 100;
+    overflow: hidden;
+    position: fixed;
     background-color: $background;
-    /* position: fixed; */
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     &-logo {
-        height: 140px;
-        margin-left: 5%;
+        height: 90px;
     }
     &-section {
         height: 100%;
         display: flex;
+        float: right;
         &-link {
             width: 220px;
             height: 100%;
@@ -83,30 +107,107 @@ hr {
             transition: all;
             &:hover {
                 color: $yellow;
-                /* font-size: 28px; */
                 background-color: $black;
-                transition: all 0.15s ease-in;
-            }
-            &:active {
-                font-size: 22px;
+                transition: all 100ms ease-in;
             }
         }
     }
 }
+/* Responsive Hanburger Menu for Mobile Users */
+.mobile-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hamburger {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-right: 60px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    /* right: 0;
+    position: relative; */
+    /* margin-bottom: 10px; */
+    /* transition: all 200ms; */
+}
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 400ms;
+}
+.menu-items {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: none;
+}
+.open {
+    /* When Hamburger Button is Pressed and Menu is Opened */
+    /* transition: padding 200ms; */
+    height: 400px;
+    width: 100vw;
+    background-color: rgba(219, 219, 219, 0.975);
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+    left: 0;
+    /* right: 0; */
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-end;
+    & .bar:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+    & .bar:nth-child(2) {
+        opacity: 0;
+    }
+    & .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+    & .hamburger {
+        /* position: static; */
+        padding: 20px;
+        /* margin-left: auto;
+        right: 0; */
+        /* transform: translateY(-20px) translateX(-20px); */
+        /* top: 0;
+        right: 0; */
+        /* transition: all 200ms; */
+    }
+    & .menu-items {
+        height: 90%;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
+/* ======================================================================== */
 /**
  * ^TITLE
  */
 .title {
     height: 300px;
     width: 100%;
+    margin-top: 90px;
     /* background-color: $black; */
     /* background-image: linear-gradient(180deg, $background, 30%, $black); */
     display: flex;
     justify-content: center;
     align-items: center;
     &-text {
-        font-size: 94px;
+        
         font-weight: 700;
         font-family: "Graduate", sans-serif;
         letter-spacing: -2px;
@@ -116,49 +217,17 @@ hr {
     }
 }
 
-/* Fading Opening Transitions  */
-@keyframes slideLeft {
-    0% { transform: translateX(-20%); opacity: 0; }
-    100% { transform: translateX(0%); }
-}
-@-webkit-keyframes slideLeft {
-    0% { -webkit-transform: translateX(-20%); }
-    100% { -webkit-transform: translateX(0%); }
-}
-.animate-slide-left {
-    /* Boolean Class For Animating (True/False) */
-    /* opacity: 1; */
-    will-change: transform;
-    animation-name: slideLeft;
-    animation-duration: 900ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideLeft;
-    -webkit-animation-duration: 900ms;
-    -moz-animation-name: slideLeft;
-    -moz-animation-duration: 900ms;
-    -o-animation-name: slideLeft;
-    -o-animation-duration: 900ms;
-}
 
 /**
  * ^Main Section
  */
 .section {
-    /* border: solid 2px $black; */
-    height: 70vh;
-    width: 1600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0;
-    /* padding: 0 20px; */
+    /* height: 70vh; */
     margin: auto;
     &-info {
         /* border: 2px $yellow solid; */
-        height: 500px;
-        width: 26%;
+        /* height: 500px; */
+        
         font-family: "Jockey One";
         font-size: 26px;
         line-height: 40px;
@@ -166,19 +235,25 @@ hr {
         border-radius: 1rem;
         /* padding: 20px; */
         margin: 0;
-        /* opacity: 0; */
+        opacity: 0;
     }
     &-img {
-        height: 700px;
-        width: 800px;
+        box-shadow: 0 6px 30px 0 rgba(206, 206, 206, 0.5);
+        
         /* border-radius: 1rem; */
-        /* opacity: 0; */
+        opacity: 0;
     }
 }
+/* .section1 {
+    width: 100%;
+    background-color: black;
+} */
 .section2 {
     &-group {
-        width: 26%;
+        width: 500px;
+        opacity: 0;
         &-title {
+            height: 60px;
             color: $yellow;
             font-size: 40px;
             font-weight: 500;
@@ -187,7 +262,7 @@ hr {
             margin: 20px 0;
         }
         &-info {
-            height: 560px;
+            height: 400px;
             font-family: "Jockey One";
             font-size: 26px;
             line-height: 40px;
@@ -200,41 +275,15 @@ hr {
     }
 }
 
-/* Fading Opening Transitions  */
-@keyframes slideIn {
-    0% { transform: translateY(10%); opacity: 0; }
-    15% { opacity: 0; }
-    100% { transform: translateY(0%); opacity: 1;}
-}
-@-webkit-keyframes slideIn {
-    0% { -webkit-transform: translateY(10%); }
-    100% { -webkit-transform: translateY(0%); }
-}
-.animate {
-    /* Boolean Class For Animating (True/False) */
-    opacity: 1;
-    will-change: transform;
-    animation-name: slideIn;
-    
-    /* animation-delay: 300ms; */
-    animation-duration: 1100ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 1100ms;
-    -moz-animation-name: slideIn;
-    -moz-animation-duration: 1100ms;
-    -o-animation-name: slideIn;
-    -o-animation-duration: 1100ms;
-}
 
+/* ======================================================================== */
 /**
  * ^OWNER SECTION
  */
 .owner {
     height: 65vh;
     color: $background;
-    /* background-color: $black; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -255,7 +304,7 @@ hr {
     }
 }
 
-
+/* ======================================================================== */
 /**
  * ^CONTACT SECTION
  */
@@ -264,7 +313,6 @@ hr {
     width: 100%;
     color: $background;
     background-color: $black;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,7 +329,7 @@ hr {
     &-info {
         /* border: 2px $yellow solid; */
         height: 300px;
-        width: 800px;
+        
         display: inline-flex;
         flex-direction: row;
         justify-content: space-between;
@@ -311,28 +359,25 @@ hr {
 }
 
 
-
+/* ======================================================================== */
 /**
  * ^PAGE FOOTER
  */
 .footer {
     /* border: 1px $yellow solid; */
-    height: 240px;
+    
     width: 100%;
     color: $background;
     background-color: black;
     /* background-image: linear-gradient(180deg, $black 2%, 35%, black); */
     /* border-top-right-radius: 2rem;
     border-top-left-radius: 2rem; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    
     &-info {
         /* Information Section */
         /* border: 1px $yellow solid; */
         height: 160px;
-        width: 600px;
+        
         float: left;
         display: flex;
         flex-direction: column;
@@ -402,9 +447,287 @@ hr {
         /* border: 1px $yellow solid; */
         float: right;
         color: $background;
-        width: 400px;
+        
         margin: 0;
         text-align: center;
         font-family: "Play", sans-serif;
     }
+}
+
+
+
+/* ======================================================================== */
+/**
+ *  ^Media Queries that Specify Certain Screen Sizes.
+ *  ^This Allows For Responsive Design and different layout styles.
+ */
+/* For Mobile */
+@media only screen and (min-width: 30px) and (max-width: 849px) {
+    .nav {
+        
+        
+        width: 100%;
+        &-logo {
+            padding-left: 2%;
+        }
+        &-section {
+            display: none;
+            
+            &-link {
+                
+                &:hover {
+                    
+                }
+                &:active {
+                    
+                }
+            }
+        }
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .title {
+        &-text {
+            font-size: 44px;
+        }
+    }
+
+    .section {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        &-info {
+            height: 300px;
+            width: 300px;
+        }
+        &-img {
+
+        }
+    }
+
+    .owner {
+
+    }
+
+    .contact {
+        &-info {
+            width: 100%;
+        }
+    }
+
+    .footer {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* padding: 20px; */
+        &-info {
+            /* width: 100vw; */
+            
+        }
+        &-copyright {
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    /* .nav {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        
+    } */
+
+}
+
+/* For Desktop */
+@media only screen and (min-width: 850px) {
+    .nav {
+        
+        
+        width: 100%;
+        &-logo {
+            margin-left: 5%;
+        }
+        &-section {
+            
+            &-link {
+                
+                &:hover {
+                    
+                }
+                &:active {
+                    
+                }
+            }
+        }
+    }
+
+    .title {
+        &-text {
+            font-size: 94px;
+        }
+    }
+
+    .section {
+        height: 75vh;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &-info {
+            height: 500px;
+            width: 26%;
+        }
+        &-img {
+            height: 500px;
+            width: 600px;
+        }
+    }
+
+    .owner {
+        
+    }
+
+    .contact {
+        &-info {
+            width: 800px;
+        }
+    }
+
+
+    .footer {
+        height: 240px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        &-info {
+            width: 400px;
+        }
+        &-copyright {
+            width: 400px;
+        }
+    }
+
+}
+
+
+
+/* ======================================================================== */
+/**
+ *  ^All Style Animations, Including
+ *  ^Keyframes and Special Classes
+ */
+/* Slide In From Bottom */
+@keyframes slideIn {
+    0% { transform: translateY(40%); opacity: 0; }
+    15% { opacity: 0; }
+    100% { transform: translateY(0%); opacity: 1; }
+}
+@-webkit-keyframes slideIn {
+    0% { -webkit-transform: translateY(40%); }
+    15% { opacity: 0; }
+    100% { -webkit-transform: translateY(0%); }
+}
+.animate-slide-in {
+    /* Special Class For slideIn Animation */
+    will-change: transform;
+    animation-name: slideIn;
+    animation-duration: 800ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 800ms;
+    -moz-animation-name: slideIn;
+    -moz-animation-duration: 800ms;
+    -o-animation-name: slideIn;
+    -o-animation-duration: 800ms;
+}
+@keyframes slideInLeft {
+    0% {
+        -webkit-transform: translate3d(-150%,0,0);
+        transform: translate3d(-150%,0,0);
+        opacity: 0;
+    }
+    20% { opacity: 0; }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideInLeft {
+    0% {
+        -webkit-transform: translate3d(-150%,0,0);
+        transform: translate3d(-150%,0,0);
+        opacity: 0;
+    }
+    20% { opacity: 0; }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+.animate-left {
+    /* Special Class For slideInLeft Animation */
+    will-change: transform;
+    animation-name: slideInLeft;
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInLeft;
+    -webkit-animation-duration: 1000ms;
+    -moz-animation-name: slideInLeft;
+    -moz-animation-duration: 1000ms;
+    -o-animation-name: slideInLeft;
+    -o-animation-duration: 1000ms;
+}
+@keyframes slideInRight {
+    0% {
+        -webkit-transform: translate3d(150%,0,0);
+        transform: translate3d(150%,0,0);
+        opacity: 0;
+    }
+    20% { opacity: 0; }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slideInRight {
+    0% {
+        -webkit-transform: translate3d(150%,0,0);
+        transform: translate3d(150%,0,0);
+        opacity: 0;
+    }
+    20% { opacity: 0; }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+.animate-right {
+    /* Special Class For slideInRight Animation */
+    will-change: transform;
+    animation-name: slideInRight;
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideInRight;
+    -webkit-animation-duration: 1000ms;
+    -moz-animation-name: slideInRight;
+    -moz-animation-duration: 1000ms;
+    -o-animation-name: slideInRight;
+    -o-animation-duration: 1000ms;
 }

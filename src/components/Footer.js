@@ -18,12 +18,12 @@ function Footer() {
                     &emsp;8143123861
                 </a>
                 <a className="footer-info-location" target="_blank" rel="noreferrer" href="https://tinyurl.com/5n7ffbmw">
-                    &emsp;2011 Crawford Avenue, Northern Cambria, PA, 15714
+                    &emsp;Find us on Google Maps
                 </a>
             </section>
             <small className="footer-copyright">
-                Copyright &copy; {currYear} Super Swing Baseball LLC. All Rights Reserved.
-                Proudly created by Mason Galat
+                Copyright &copy; {currYear} Super Swing Baseball LLC. All Rights Reserved.<br/>
+                Created by Mason Galat
             </small>
         </footer>
     );

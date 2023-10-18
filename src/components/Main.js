@@ -23,28 +23,23 @@ function Main() {
     const [ section3ref, section3 ] = useInView(options);
 
 
-
-
-
-
-
     return (
         <main>
-            <section ref={section1ref} className={`${"section section1"} ${section1 ? "animate" : ""}`}>
-                <p className="section-info">
+            <section ref={section1ref} className="section section1">
+                <p className={`${"section-info"} ${section1 ? "animate-left" : ""}`}>
                     &emsp;Our goal is to help develop players fundamentally
                     and make them successful on and off the field. We encourage players to do their best, and they
                     have immense fun doing so.
                 </p>
                 <img
-                    className="section-img"
+                    className={`section-img ${section1 ? "animate-right" : ""}`}
                     src="./img/team.webp"
                     alt="Team of Kids">
                 </img>
             </section>
-            <section ref={section2ref} className={`${"section section2"} ${section2 ? "animate" : ""}`}>
-                <img className="section-img" src="./img/interior.jpg" alt="Building Interior"></img>
-                <div className="section2-group">
+            <section ref={section2ref} className="section section2">
+                <img className={`section-img ${section2 ? "animate-left" : ""}`} src="./img/interior.jpg" alt="Building Interior"></img>
+                <div className={`section2-group ${section2 ? "animate-right" : ""}`}>
                     <h2 className="section2-group-title">
                         About Us
                     </h2>
@@ -58,13 +53,13 @@ function Main() {
                     </p>
                 </div>
             </section>
-            <section ref={section3ref} className={`${"section section3"} ${section3 ? "animate" : ""}`}>
-                <p className="section-info">
+            <section ref={section3ref} className="section section3">
+                <p className={`section-info ${section3 ? "animate-left" : ""}`}>
                     &emsp;sljhdfk jsh dfkjs hdfks adfsd fsdfsd fsdfsd fdfsdfsd fsdfsd fsdf sdfsdf
                     sdfsdfsd fsdfsdffffff fff ffffff ffffff  ffffffff ffffffff ffffff
                     dff   ffffffffff ffffff fff  ffffff fffff
                 </p>
-                <img className="section-img" src="./img/field.jpg" alt="Field"></img>
+                <img className={`section-img ${section3 ? "animate-right" : ""}`} src="./img/field.jpg" alt="Field"></img>
             </section>
         </main>
     );
