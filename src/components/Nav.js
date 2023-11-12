@@ -5,7 +5,7 @@ function Nav() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const toggleMenu = () => {
+    const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
     };
 
@@ -13,18 +13,21 @@ function Nav() {
         let about = document.getElementsByClassName("section2");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        setIsOpen(false);
     }
 
     let ownerScroll = e => {
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
         owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "center"  });
+        setIsOpen(false);
     }
 
     let footerScroll = e => {
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
         footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "center"  });
+        setIsOpen(false);
     }
 
     window.addEventListener("scroll", function(){
@@ -39,15 +42,19 @@ function Nav() {
 
     return (
         <header>
-            <hr className={`top-border ${isScrolled? 'scrolled' : ''}`}/>
-            <nav className="nav" onScroll={console.log('pp')}>
-                <img className="nav-logo" src="./img/logo.jpg" alt="Company Logo"></img>
-                <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <button className="hamburger" onClick={toggleMenu}>
+            <nav className="nav">
+                <hr className={`border top-border ${isScrolled? 'scrolled1' : ''}`}/>
+                <a href="/">
+                    <img className="nav-logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
+                </a>
+                <div className="hamburger">
+                    <button className={`hamburger-button ${isOpen ? 'hamburger-button-open' : ''}`} onClick={toggleMobileMenu}>
                         <div className="bar"></div>
                         <div className="bar"></div>
                         <div className="bar"></div>
                     </button>
+                </div>
+                <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <ul className="menu-items">
                         <li>
                             <a
@@ -101,7 +108,7 @@ function Nav() {
                         CONTACT
                     </a>
                 </section>
-                
+                <hr className={`border bottom-border ${isScrolled? 'scrolled2' : ''}`}/>
             </nav>
         </header>
     );
