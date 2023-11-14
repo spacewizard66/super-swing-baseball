@@ -26,7 +26,7 @@ function Nav() {
     let footerScroll = e => {
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
-        footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "center"  });
+        footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "end"  });
         setIsOpen(false);
     }
 

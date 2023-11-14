@@ -75,7 +75,7 @@ hr {
 }
 .bottom-border {
     top: 96px;
-    background-color: $background;
+    background-color: $grey;
 }
 .scrolled1 {
     background-color: $yellow;
@@ -102,7 +102,6 @@ hr {
         height: 100%;
         display: flex;
         float: right;
-        
         &-link {
             width: 220px;
             height: 100%;
@@ -114,7 +113,6 @@ hr {
             font-size: 26px;
             font-weight: 500;
             font-family: "Jockey One";
-            
             /* transition: all; */
             &:hover {
                 color: $yellow;
@@ -185,8 +183,9 @@ hr {
 .open {
     /* When Hamburger Button is Pressed and Menu is Opened */
     /* transition: padding 200ms; */
-    height: 500px;
+    height: 400px;
     width: 95vw;
+    border-radius: 1.5rem;
     margin: 2.5vw;
     background-color: rgba(219, 219, 219, 0.975);
     position: fixed;
@@ -212,7 +211,6 @@ hr {
     -moz-animation-duration: 300ms;
     -o-animation-name: slideInRight;
     -o-animation-duration: 300ms;
-    
     & .hamburger {
         /* position: static; */
         padding: 20px;
@@ -248,7 +246,6 @@ hr {
     justify-content: center;
     align-items: center;
     &-text {
-        
         font-weight: 700;
         font-family: "Graduate", sans-serif;
         letter-spacing: -2px;
@@ -268,7 +265,6 @@ hr {
     &-info {
         /* border: 2px $yellow solid; */
         /* height: 500px; */
-        
         font-family: "Jockey One";
         font-size: 26px;
         line-height: 40px;
@@ -280,7 +276,6 @@ hr {
     }
     &-img {
         box-shadow: 0 6px 30px 0 rgba(206, 206, 206, 0.5);
-        
         /* border-radius: 1rem; */
         opacity: 0;
     }
@@ -291,7 +286,6 @@ hr {
 } */
 .section2 {
     &-group {
-        width: 500px;
         opacity: 0;
         &-title {
             height: 60px;
@@ -322,15 +316,14 @@ hr {
  * ^OWNER SECTION
  */
 .owner {
-    height: 65vh;
-    color: $background;
+    color: $grey;
     background-color: black;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     &-container {
-        width: 800px;
-        margin: auto;
+        /* width: 800px; */
+        margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -352,7 +345,7 @@ hr {
 .contact {
     height: 65vh;
     width: 100%;
-    color: $background;
+    color: $grey;
     background-color: $black;
     display: flex;
     flex-direction: column;
@@ -370,7 +363,6 @@ hr {
     &-info {
         /* border: 2px $yellow solid; */
         height: 300px;
-        
         display: inline-flex;
         flex-direction: row;
         justify-content: space-between;
@@ -406,25 +398,21 @@ hr {
  */
 .footer {
     /* border: 1px $yellow solid; */
-    
     width: 100%;
     color: $background;
     background-color: black;
     /* background-image: linear-gradient(180deg, $black 2%, 35%, black); */
     /* border-top-right-radius: 2rem;
     border-top-left-radius: 2rem; */
-    
     &-info {
         /* Information Section */
         /* border: 1px $yellow solid; */
         height: 160px;
-        
         float: left;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-
         &-heading {
             color: $yellow;
             margin: 14px 0;
@@ -488,7 +476,6 @@ hr {
         /* border: 1px $yellow solid; */
         float: right;
         color: $background;
-        
         margin: 0;
         text-align: center;
         font-family: "Play", sans-serif;
@@ -505,24 +492,20 @@ hr {
 /* For Mobile */
 @media only screen and (min-width: 30px) and (max-width: 849px) {
     .nav {
-        
-        
         width: 100%;
         &-logo {
             padding-left: 2%;
         }
         &-section {
             display: none;
-            
-            &-link {
-                
+            /* &-link {
                 &:hover {
                     
                 }
                 &:active {
                     
                 }
-            }
+            } */
         }
     }
     .hamburger-button {
@@ -531,13 +514,14 @@ hr {
 
     .title {
         &-text {
-            font-size: 44px;
+            font-size: 50px;
+            text-align: center;
         }
     }
 
     .section {
-        width: 100%;
-        padding: 0 20px;
+        width: 100vw;
+        /* padding: 0 20px; */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -547,30 +531,115 @@ hr {
             width: 300px;
         }
         &-img {
+            width: 90vw;
+        }
+    }
 
+    .section2 {
+        &-group {
+            width: 90vw;
+            &-title {
+                height: 60px;
+                font-weight: 500;
+                margin: 20px 0;
+            }
+            &-info {
+                height: 400px;
+                font-family: "Jockey One";
+                font-size: 24px;
+                line-height: 40px;
+                color: $grey;
+                border-radius: 1rem;
+                padding: 20px;
+                margin: 0;
+                /* opacity: 0; */
+            }
         }
     }
 
     .owner {
-
+        height: 900px;
+        
+        &-container {
+            height: 100%;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            &-title {
+                font-size: 38px;
+                color: $yellow;
+                margin: 0;
+            }
+            &-p1, &-p2 {
+                width: 85%;
+                margin: 0;
+            }
+        }
     }
 
+
     .contact {
+        height: 48vh;
+        min-height: 444px;
+        width: 100%;
+        /* color: $background; */
+        background-color: $black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &-title {
+            /* border: 2px $yellow solid; */
+            color: $yellow;
+            font-size: 40px;
+            font-weight: 500;
+            font-family: "Jockey One", sans-serif;
+            text-align: center;
+            margin: 0;
+        }
         &-info {
-            width: 100%;
+            /* border: 2px $yellow solid; */
+            height: 300px;
+            width: 90%;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            /* background-color: #000000; */
+            &-details {
+                /* border: 2px $yellow solid; */
+                /* height: 100%; */
+                width: 70%;
+                font-size: 18px;
+                line-height: 28px;
+                text-align: center;
+                /* margin: 10px; */
+                /* background-color: #000000; */
+            }
+            &-times {
+                /* border: 2px $yellow solid; */
+                /* height: 100%; */
+                width: 70%;
+                font-size: 18px;
+                line-height: 28px;
+                text-align: center;
+                /* margin: 10px; */
+                /* background-color: #000000; */
+            }
         }
     }
 
     .footer {
-        height: 400px;
+        height: 340px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         /* padding: 20px; */
         &-info {
-            /* width: 100vw; */
-            
+            font-size: 16px;
         }
         &-copyright {
             width: 90%;
@@ -580,14 +649,11 @@ hr {
 /* For Desktop */
 @media only screen and (min-width: 850px) {
     .nav {
-        
-        
         width: 100%;
         &-logo {
             margin-left: 5%;
         }
-        &-section {
-            
+        /* &-section {
             &-link {
                 
                 &:hover {
@@ -597,7 +663,7 @@ hr {
                     
                 }
             }
-        }
+        } */
     }
 
     .title {
@@ -622,9 +688,34 @@ hr {
             width: 600px;
         }
     }
+    .section2 {
+        &-group {
+            width: 500px;
+        }
+    }
 
     .owner {
-        
+        height: 65vh;
+        color: $background;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-container {
+            width: 800px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            /* &-img {
+    
+            } */
+            &-title {
+                font-size: 32px;
+            }
+        }
     }
 
     .contact {
