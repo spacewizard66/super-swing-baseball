@@ -56,6 +56,33 @@ hr {
     color: $yellow;
 }
 
+
+/* ======================================================================== */
+/* ======================================================================== */
+/**
+ * ^LOADING SPINNER
+ */
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.spinner-content {
+    border: 8px solid #f3f3f3; /* Light gray border */
+    border-top: 8px solid #3498db; /* Blue border for the spinner animation */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  * ^NAVIGATION BAR
@@ -71,18 +98,18 @@ hr {
 }
 .top-border {
     top: 0;
-    background-color: $yellow;
+    background-color: $brown;
 }
 .bottom-border {
     top: 96px;
-    background-color: $grey;
+    background-color: $brown;
 }
 .scrolled1 {
     background-color: $yellow;
 }
-.scrolled2 {
-    background-color: $yellow;
-}
+/* .scrolled2 {
+    background-color: black;
+} */
 .nav {
     height: 100px;
     top: 0px;
@@ -149,7 +176,7 @@ hr {
 .bar {
     width: 30px;
     height: 3px;
-    background-color: #333;
+    background-color: black;
     margin: 3px 0;
     transition: 300ms;
 }
@@ -168,10 +195,18 @@ hr {
     }
 }
 .mobile-menu {
-    z-index: 101;
+    z-index: 103;
     position: relative;
     transform: translateX(100%);
-    transition: transform 300ms;
+    transition: transform 200ms;
+}
+.menu-background {
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    z-index: 101;
+    position: fixed;
+    background-color: rgba(31, 31, 31, 0.9);
 }
 .menu-items {
     list-style: none;
@@ -184,10 +219,10 @@ hr {
     /* When Hamburger Button is Pressed and Menu is Opened */
     /* transition: padding 200ms; */
     height: 400px;
-    width: 95vw;
-    border-radius: 1.5rem;
-    margin: 2.5vw;
-    background-color: rgba(219, 219, 219, 0.975);
+    width: 82.5vw;
+    border-radius: .75rem;
+    margin: 2.5vh 8.75vw;
+    background-color: rgba(219, 219, 219, 0.98);
     position: fixed;
     top: 0;
     /* bottom: 0; */
@@ -202,15 +237,15 @@ hr {
     transition: transform 300ms; */
     will-change: transform;
     animation-name: slideInRight;
-    animation-duration: 300ms;
+    animation-duration: 200ms;
     animation-timing-function: linear;
     animation-fill-mode: both;
     -webkit-animation-name: slideInRight;
-    -webkit-animation-duration: 300ms;
+    -webkit-animation-duration: 200ms;
     -moz-animation-name: slideInRight;
-    -moz-animation-duration: 300ms;
+    -moz-animation-duration: 200ms;
     -o-animation-name: slideInRight;
-    -o-animation-duration: 300ms;
+    -o-animation-duration: 200ms;
     & .hamburger {
         /* position: static; */
         padding: 20px;
@@ -232,6 +267,8 @@ hr {
     }
 }
 
+
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  * ^TITLE
@@ -256,6 +293,8 @@ hr {
 }
 
 
+/* ======================================================================== */
+/* ======================================================================== */
 /**
  * ^Main Section
  */
@@ -288,29 +327,30 @@ hr {
     &-group {
         opacity: 0;
         &-title {
-            height: 60px;
+            /* height: 60px; */
             color: $yellow;
             font-size: 40px;
             font-weight: 500;
             font-family: "Jockey One", sans-serif;
             text-align: center;
-            margin: 20px 0;
+            /* margin: 20px 0; */
         }
         &-info {
-            height: 400px;
+            /* height: 400px; */
             font-family: "Jockey One";
             font-size: 26px;
             line-height: 40px;
             color: $grey;
-            border-radius: 1rem;
+            /* border-radius: 1rem; */
             /* padding: 20px; */
-            margin: 0;
+            /* margin: 0; */
             /* opacity: 0; */
         }
     }
 }
 
 
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  * ^OWNER SECTION
@@ -338,6 +378,8 @@ hr {
     }
 }
 
+
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  * ^CONTACT SECTION
@@ -392,6 +434,7 @@ hr {
 }
 
 
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  * ^PAGE FOOTER
@@ -484,6 +527,28 @@ hr {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================================== */
 /* ======================================================================== */
 /**
  *  ^Media Queries that Specify Certain Screen Sizes.
@@ -536,21 +601,29 @@ hr {
     }
 
     .section2 {
+        height: 800px;
+        width: 100vw;
         &-group {
-            width: 90vw;
+            /* width: 100%; */
+            height: 580px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
             &-title {
                 height: 60px;
                 font-weight: 500;
-                margin: 20px 0;
+                margin: 0;
             }
             &-info {
-                height: 400px;
+                /* height: 400px; */
                 font-family: "Jockey One";
                 font-size: 24px;
-                line-height: 40px;
+                line-height: 30px;
                 color: $grey;
                 border-radius: 1rem;
-                padding: 20px;
+                /* padding: 20px; */
                 margin: 0;
                 /* opacity: 0; */
             }
@@ -559,7 +632,7 @@ hr {
 
     .owner {
         height: 900px;
-        
+        scroll-margin-top: 100px;
         &-container {
             height: 100%;
             font-size: 16px;
@@ -651,7 +724,7 @@ hr {
     .nav {
         width: 100%;
         &-logo {
-            margin-left: 5%;
+            margin-left: 60px;
         }
         /* &-section {
             &-link {
@@ -691,13 +764,35 @@ hr {
     .section2 {
         &-group {
             width: 500px;
+            opacity: 0;
+            &-title {
+                height: 60px;
+                color: $yellow;
+                font-size: 40px;
+                font-weight: 500;
+                font-family: "Jockey One", sans-serif;
+                text-align: center;
+                /* margin: 20px 0; */
+            }
+            &-info {
+                height: 400px;
+                font-family: "Jockey One";
+                font-size: 26px;
+                line-height: 40px;
+                color: $grey;
+                border-radius: 1rem;
+                /* padding: 20px; */
+                margin: 0;
+                /* opacity: 0; */
+            }
         }
     }
 
     .owner {
-        height: 65vh;
+        height: calc(100vh - 108px);
         color: $background;
         background-color: black;
+        scroll-margin-top: 100px;
         display: flex;
         justify-content: center;
         align-items: center;

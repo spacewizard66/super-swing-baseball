@@ -19,7 +19,7 @@ function Nav() {
     let ownerScroll = e => {
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
-        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "center"  });
+        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
         setIsOpen(false);
     }
 
@@ -54,7 +54,9 @@ function Nav() {
                         <div className="bar"></div>
                     </button>
                 </div>
-                <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+                <div className={`${isOpen ? 'menu-background' : ''}`} onClick={toggleMobileMenu}>
+                </div>
+                <section className={`mobile-menu ${isOpen ? 'open' : ''}`}>
                     <ul className="menu-items">
                         <li>
                             <a
@@ -84,7 +86,8 @@ function Nav() {
                             </a>
                         </li>
                     </ul>
-                </div>
+                </section>
+                
                 <section className="nav-section">
                     <a
                         className="nav-section-link"
