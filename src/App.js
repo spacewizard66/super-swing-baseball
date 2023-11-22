@@ -16,7 +16,7 @@ function App() {
         // Set loading to false when the page is finished loading
         setTimeout(() => {
             setLoading(false);
-        }, 400)
+        }, 250)
     };
 
     // Add an event listener for the 'load' event on the window

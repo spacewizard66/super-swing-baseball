@@ -43,7 +43,7 @@ function Nav() {
     return (
         <header>
             <nav className="nav">
-                <hr className={`border top-border ${isScrolled? 'scrolled1' : ''}`}/>
+                {/* <hr className={`border top-border ${isScrolled? 'scrolled1' : ''}`}/> */}
                 <a href="/">
                     <img className="nav-logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
                 </a>
@@ -111,7 +111,7 @@ function Nav() {
                         CONTACT
                     </a>
                 </section>
-                <hr className={`border bottom-border ${isScrolled? 'scrolled2' : ''}`}/>
+                {/* <hr className={`border bottom-border ${isScrolled? 'scrolled2' : ''}`}/> */}
             </nav>
         </header>
     );
