@@ -12,20 +12,19 @@ function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-    const finishLoading = () => {
-        // Set loading to false when the page is finished loading
-        setTimeout(() => {
-            setLoading(false);
-        }, 250)
-    };
+        const finishLoading = () => {
+            // Set loading to false when the page is finished loading
+            setLoading(false)
+        };
 
-    // Add an event listener for the 'load' event on the window
-    window.addEventListener('load', finishLoading);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-    window.removeEventListener('load', finishLoading);
-    };
+        if (document.readyState === 'complete') {
+            finishLoading();
+        } else {
+            // Add an event listener for the 'load' event on the window
+            window.addEventListener('load', finishLoading);
+            // Clean up the event listener when the component unmounts
+            return () => window.removeEventListener('load', finishLoading);
+        }
     }, []);
 
     return (

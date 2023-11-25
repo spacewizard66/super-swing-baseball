@@ -2,9 +2,9 @@ import React from 'react';
 
 function LoadingSpinner() {
     return (
-        <div className="spinner">
+        <section className="spinner">
             <div className="spinner-content"></div>
-        </div>
+        </section>
     );
 }
 export default LoadingSpinner;

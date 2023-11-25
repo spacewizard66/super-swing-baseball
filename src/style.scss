@@ -407,7 +407,8 @@ hr {
 
         } */
         &-title {
-            font-size: 32px;
+            /* font-size: 40px; */
+            color: $yellow;
         }
     }
 }
@@ -597,16 +598,14 @@ hr {
         }
         &-section {
             display: none;
-            
             &-link {
                 width: 100%;
                 height: 115.5px;
                 /* background-color: #a16b0b; */
-                
-                &:active {
-                    /* color: $yellow;
-                    background-color: $black; */
-                }
+                /* &:active {
+                    color: $yellow;
+                    background-color: $black;
+                } */
             }
         }
     }
@@ -682,7 +681,6 @@ hr {
             align-items: center;
             &-title {
                 font-size: 38px;
-                color: $yellow;
                 margin: 0;
             }
             &-p1, &-p2 {
@@ -829,7 +827,7 @@ hr {
     }
 
     .owner {
-        height: calc(100vh - 108px);
+        height: calc(100vh - 100px);
         color: $background;
         background-color: black;
         scroll-margin-top: 100px;
@@ -848,7 +846,7 @@ hr {
     
             } */
             &-title {
-                font-size: 32px;
+                font-size: 40px;
             }
         }
     }

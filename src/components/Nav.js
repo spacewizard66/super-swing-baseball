@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 function Nav() {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    /* const [isScrolled, setIsScrolled] = useState(false); */
 
+    // Function that changes state (open/closed) of mobile nav menu
     const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    // Smooth scrolls to About section of the web page
     let aboutScroll = e => {
         let about = document.getElementsByClassName("section2");
         e.preventDefault();  // Stop Page Reloading
@@ -16,6 +18,7 @@ function Nav() {
         setIsOpen(false);
     }
 
+    // Smooth scrolls to Staff section of the web page
     let ownerScroll = e => {
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
@@ -23,6 +26,7 @@ function Nav() {
         setIsOpen(false);
     }
 
+    // Smooth scrolls to Footer of the web page
     let footerScroll = e => {
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
@@ -30,15 +34,15 @@ function Nav() {
         setIsOpen(false);
     }
 
-    window.addEventListener("scroll", function(){
-        if (window.scrollY > 4){
-            //user is at the top of the page; no need to show the back to top button
+    // Checks if the page has been scrolled from the top by 5 pixels,
+    // then changes state accordingly.
+    /* window.addEventListener("scroll", function(){
+        if (window.scrollY > 4) {
             setIsScrolled(true)
         } else {
             setIsScrolled(false)
         }
-    });
-    console.log(window.scrollY)
+    }); */
 
     return (
         <header>
@@ -87,7 +91,6 @@ function Nav() {
                         </li>
                     </ul>
                 </section>
-                
                 <section className="nav-section">
                     <a
                         className="nav-section-link"
