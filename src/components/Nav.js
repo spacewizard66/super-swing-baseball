@@ -47,10 +47,16 @@ function Nav() {
     return (
         <header>
             <nav className="nav">
-                {/* <hr className={`border top-border ${isScrolled? 'scrolled1' : ''}`}/> */}
-                <a href="/">
+                {/* Logo and Title */}
+                <a className="nav-relink animate-slide-in" href="/">
                     <img className="nav-logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
+                    <section className="title">
+                        <h1 className="title-text">
+                            SUPER SWING BASEBALL
+                        </h1>
+                    </section>
                 </a>
+                {/* Hamburger Button for Mobile Navigation */}
                 <div className="hamburger">
                     <button className={`hamburger-button ${isOpen ? 'hamburger-button-open' : ''}`} onClick={toggleMobileMenu}>
                         <div className="bar"></div>
@@ -58,62 +64,71 @@ function Nav() {
                         <div className="bar"></div>
                     </button>
                 </div>
-                <div className={`${isOpen ? 'menu-background' : ''}`} onClick={toggleMobileMenu}>
-                </div>
-                <section className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-                    <ul className="menu-items">
-                        <li>
-                            <a
-                                className="nav-section-link"
-                                href="/"
-                                onClick={aboutScroll}
-                            >
-                                ABOUT
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="nav-section-link"
-                                href="/"
-                                onClick={ownerScroll}
-                            >
-                                STAFF
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                className="nav-section-link"
-                                href="/"
-                                onClick={footerScroll}
-                            >
-                                CONTACT
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-                <section className="nav-section">
-                    <a
-                        className="nav-section-link"
-                        href="/"
-                        onClick={aboutScroll}
-                    >
-                        ABOUT
-                    </a>
-                    <a
-                        className="nav-section-link"
-                        href="/"
-                        onClick={ownerScroll}
-                    >
-                        STAFF
-                    </a>
-                    <a
-                        className="nav-section-link"
-                        href="/"
-                        onClick={footerScroll}
-                    >
-                        CONTACT
-                    </a>
-                </section>
+                {/* Checks if Hamburger Button has been Opened, Returns Appropriate Markup */}
+                {isOpen ? (
+                    // Mobile Markup
+                    <>
+                        <div className="menu-background" onClick={toggleMobileMenu}>
+                        </div>
+                        <section className="mobile-menu open">
+                            <ul className="menu-items">
+                                <li>
+                                    <a
+                                        className="nav-section-link"
+                                        href="/"
+                                        onClick={aboutScroll}
+                                    >
+                                        ABOUT
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className="nav-section-link"
+                                        href="/"
+                                        onClick={ownerScroll}
+                                    >
+                                        STAFF
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        className="nav-section-link"
+                                        href="/"
+                                        onClick={footerScroll}
+                                    >
+                                        CONTACT
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </>
+                ) : (
+                    // Desktop Markup
+                    <section className="nav-section">
+                        <a
+                            className="nav-section-link"
+                            href="/"
+                            onClick={aboutScroll}
+                        >
+                            ABOUT
+                        </a>
+                        <a
+                            className="nav-section-link"
+                            href="/"
+                            onClick={ownerScroll}
+                        >
+                            STAFF
+                        </a>
+                        <a
+                            className="nav-section-link"
+                            href="/"
+                            onClick={footerScroll}
+                        >
+                            CONTACT
+                        </a>
+                    </section>
+                    )
+                }
                 {/* <hr className={`border bottom-border ${isScrolled? 'scrolled2' : ''}`}/> */}
             </nav>
         </header>

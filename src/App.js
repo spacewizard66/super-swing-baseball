@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import LoadingSpinner from './components/LoadingSpinner.js';
 import Nav from './components/Nav.js';
-import Title from './components/Title.js';
 import Main from './components/Main.js';
 import Owner from './components/Owner.js';
 import Contact from './components/Contact.js';
@@ -16,7 +15,7 @@ function App() {
             // Set loading to false when the page is finished loading
             setLoading(false)
         };
-
+        // Checks if document has already finished loading
         if (document.readyState === 'complete') {
             finishLoading();
         } else {
@@ -36,7 +35,6 @@ function App() {
                 // Display the main content when page has finished loading
                 <>
                     <Nav />
-                    <Title />
                     <Main />
                     <Owner />
                     <Contact />
