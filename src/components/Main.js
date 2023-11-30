@@ -3,11 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import '../style.scss';
 
 function Main() {
-    // Brings viewport back to top of page on unload (refresh)
-    //  to help animation effects
-    window.onunload = function () {
-        window.scrollTo(0, 0);
-    }
+    
 
     // Declaring options for useInView() hook
     const options = {

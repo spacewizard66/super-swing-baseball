@@ -46,9 +46,9 @@ function Nav() {
 
     return (
         <header>
-            <nav className="nav">
+            <nav className="nav animate-slide-in">
                 {/* Logo and Title */}
-                <a className="nav-relink animate-slide-in" href="/">
+                <a className="nav-relink" href="/">
                     <img className="nav-logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
                     <section className="title">
                         <h1 className="title-text">

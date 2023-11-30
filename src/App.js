@@ -12,18 +12,26 @@ function App() {
 
     useEffect(() => {
         const finishLoading = () => {
-            // Set loading to false when the page is finished loading
-            setLoading(false)
+            setTimeout(() => {
+                // Set loading to false when the page is finished loading
+                setLoading(false)
+            }, '550')
         };
+
+        // Brings viewport back to top of page on unload (refresh)
+        //  to help animation effects
+        window.onunload = function () {
+            window.scrollTo(0, 0);
+        }
         // Checks if document has already finished loading
-        if (document.readyState === 'complete') {
+        /* if (document.readyState === 'complete') {
             finishLoading();
-        } else {
+        } else { */
             // Add an event listener for the 'load' event on the window
             window.addEventListener('load', finishLoading);
             // Clean up the event listener when the component unmounts
             return () => window.removeEventListener('load', finishLoading);
-        }
+        /* } */
     }, []);
 
     return (
