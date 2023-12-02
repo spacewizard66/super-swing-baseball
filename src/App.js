@@ -10,28 +10,44 @@ import Footer from './components/Footer.js';
 function App() {
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const finishLoading = () => {
-            setTimeout(() => {
-                // Set loading to false when the page is finished loading
-                setLoading(false)
-            }, '550')
-        };
+    // Brings viewport back to top of page on unload (refresh)
+    //  to help animation effects
+    window.onunload = function () {
+        window.scrollTo(0, 0);
+        /* setLoading(true) */
+    }
 
-        // Brings viewport back to top of page on unload (refresh)
-        //  to help animation effects
-        window.onunload = function () {
-            window.scrollTo(0, 0);
-        }
+    const finishLoading = () => {
+        setTimeout(() => {
+            // Set loading to false when the page is finished loading
+            setLoading(false)
+        }, "250")
+        /* setLoading(false) */
+    };
+
+    useEffect(() => {
+        finishLoading()
+
+        /* window.onload = () => {
+            finishLoading();
+        }; */
+
+        /* document.onreadystatechange = () => {
+            if (document.readyState === "complete") {
+                setLoading(false)
+            }
+        } */
+
+        
         // Checks if document has already finished loading
         /* if (document.readyState === 'complete') {
             finishLoading();
-        } else { */
+        } else {
             // Add an event listener for the 'load' event on the window
-            window.addEventListener('load', finishLoading);
+            // window.addEventListener('load', finishLoading);
             // Clean up the event listener when the component unmounts
-            return () => window.removeEventListener('load', finishLoading);
-        /* } */
+            // return () => window.removeEventListener('load', finishLoading);
+        } */
     }, []);
 
     return (
