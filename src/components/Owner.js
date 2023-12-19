@@ -1,12 +1,12 @@
 function Owner() {
 	return (
 		<section className="owner">
-            <div className="owner-container">
-                {/* <img className="owner-container-img" src="./public/img/..." alt="Owner"></img> */}
-                <h2 className="owner-container-title">
+            <div className="owner__container">
+                {/* <img className="owner__img" src="./public/img/..." alt="Owner"></img> */}
+                <h2 className="owner__title">
                     John Bonatesta
                 </h2>
-                <p className="owner-container-p1">
+                <p className="owner__p">
                     John is a graduate of Northern Cambria High School.
                     During his high school athletic career, John was a 4-year
                     letterman in baseball, football and basketball. He holds the
@@ -21,7 +21,7 @@ function Owner() {
                     team for one year and in the Altoona City League for three
                     years.
                 </p>
-                <p className="owner-container-p2">
+                <p className="owner__p">
                     John played baseball at LaRoche College during his
                     freshman year. He then transferred to Mount Aloysius College
                     where he played baseball his sophomore year. John was a two-year

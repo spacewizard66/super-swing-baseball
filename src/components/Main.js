@@ -3,8 +3,6 @@ import { useInView } from 'react-intersection-observer';
 import '../style.scss';
 
 function Main() {
-    
-
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
@@ -18,7 +16,6 @@ function Main() {
     const [ section2ref, section2 ] = useInView(options);
     const [ section3ref, section3 ] = useInView(options);
 
-
     return (
         <main>
             <section ref={section1ref} className="section section1">
@@ -30,7 +27,7 @@ function Main() {
                 <img
                     className={`section-img ${section1 ? "animate-right" : ""}`}
                     src="./img/team.webp"
-                    alt="Team of Kids">
+                    alt="Team">
                 </img>
             </section>
             <section ref={section2ref} className="section section2">

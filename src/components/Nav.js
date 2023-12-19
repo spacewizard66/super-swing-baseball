@@ -129,7 +129,6 @@ function Nav() {
                     </section>
                     )
                 }
-                {/* <hr className={`border bottom-border ${isScrolled? 'scrolled2' : ''}`}/> */}
             </nav>
         </header>
     );

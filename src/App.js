@@ -17,16 +17,11 @@ function App() {
         /* setLoading(true) */
     }
 
-    const finishLoading = () => {
+    useEffect(() => {
         setTimeout(() => {
             // Set loading to false when the page is finished loading
             setLoading(false)
         }, "250")
-        /* setLoading(false) */
-    };
-
-    useEffect(() => {
-        finishLoading()
 
         /* window.onload = () => {
             finishLoading();
@@ -38,7 +33,6 @@ function App() {
             }
         } */
 
-        
         // Checks if document has already finished loading
         /* if (document.readyState === 'complete') {
             finishLoading();
