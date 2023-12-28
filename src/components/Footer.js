@@ -22,7 +22,8 @@ function Footer() {
                 </a>
             </section>
             <small className="footer__copyright">
-                Copyright &copy; {currYear} Super Swing Baseball LLC. All Rights Reserved.<br/>
+                Copyright &copy; {currYear} Super Swing Baseball LLC.<br/>
+                {/* All Rights Reserved.<br/> */}
                 Created by Mason Galat
             </small>
         </footer>

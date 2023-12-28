@@ -12,7 +12,7 @@ function Nav() {
 
     // Smooth scrolls to About section of the web page
     let aboutScroll = e => {
-        let about = document.getElementsByClassName("section2");
+        let about = document.getElementsByClassName("section--2");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "center" });
         setIsOpen(false);
@@ -22,7 +22,7 @@ function Nav() {
     let ownerScroll = e => {
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
-        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
+        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "center"  });
         setIsOpen(false);
     }
 
@@ -48,33 +48,31 @@ function Nav() {
         <header>
             <nav className="nav animate-slide-in">
                 {/* Logo and Title */}
-                <a className="nav-relink" href="/">
-                    <img className="nav-logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
-                    <section className="title">
-                        <h1 className="title-text">
+                <a className="nav__relink" href="/">
+                    <img className="nav__logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
+                    <section className="nav__title">
+                        <h1 className="nav__title-text">
                             SUPER SWING BASEBALL
                         </h1>
                     </section>
                 </a>
                 {/* Hamburger Button for Mobile Navigation */}
-                <div className="hamburger">
-                    <button className={`hamburger-button ${isOpen ? 'hamburger-button-open' : ''}`} onClick={toggleMobileMenu}>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
+                <div className="nav__hamburger">
+                    <button className={`nav__hamburger-button ${isOpen ? 'nav__hamburger-button--open' : ''}`} onClick={toggleMobileMenu}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </button>
                 </div>
                 {/* Checks if Hamburger Button has been Opened, Returns Appropriate Markup */}
                 {isOpen ? (
                     // Mobile Markup
                     <>
-                        <div className="menu-background" onClick={toggleMobileMenu}>
-                        </div>
-                        <section className="mobile-menu open">
-                            <ul className="menu-items">
+                        <section className="nav__menu nav--mobile">
+                            <ul className="nav__menu-items">
                                 <li>
                                     <a
-                                        className="nav-section-link"
+                                        className="nav__link"
                                         href="/"
                                         onClick={aboutScroll}
                                     >
@@ -83,7 +81,7 @@ function Nav() {
                                 </li>
                                 <li>
                                     <a
-                                        className="nav-section-link"
+                                        className="nav__link"
                                         href="/"
                                         onClick={ownerScroll}
                                     >
@@ -92,7 +90,7 @@ function Nav() {
                                 </li>
                                 <li>
                                     <a
-                                        className="nav-section-link"
+                                        className="nav__link"
                                         href="/"
                                         onClick={footerScroll}
                                     >
@@ -101,31 +99,33 @@ function Nav() {
                                 </li>
                             </ul>
                         </section>
+                        <div className="nav__mobile-background" onClick={toggleMobileMenu}>
+                        </div>
                     </>
                 ) : (
                     // Desktop Markup
-                    <section className="nav-section">
-                        <a
-                            className="nav-section-link"
-                            href="/"
-                            onClick={aboutScroll}
-                        >
-                            ABOUT
-                        </a>
-                        <a
-                            className="nav-section-link"
-                            href="/"
-                            onClick={ownerScroll}
-                        >
-                            STAFF
-                        </a>
-                        <a
-                            className="nav-section-link"
-                            href="/"
-                            onClick={footerScroll}
-                        >
-                            CONTACT
-                        </a>
+                    <section className="nav__menu">
+                                <a
+                                    className="nav__link"
+                                    href="/"
+                                    onClick={aboutScroll}
+                                >
+                                    ABOUT
+                                </a>
+                                <a
+                                    className="nav__link"
+                                    href="/"
+                                    onClick={ownerScroll}
+                                >
+                                    STAFF
+                                </a>
+                                <a
+                                    className="nav__link"
+                                    href="/"
+                                    onClick={footerScroll}
+                                >
+                                    CONTACT
+                                </a>
                     </section>
                     )
                 }

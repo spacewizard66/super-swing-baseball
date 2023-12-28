@@ -46,19 +46,21 @@ function App() {
 
     return (
         <>
+            
             {loading ? (
                 // Display the loading spinner while loading page and assets
                 <LoadingSpinner />
             ) : (
                 // Display the main content when page has finished loading
                 <>
-                    <Nav />
+                    
                     <Main />
                     <Owner />
                     <Contact />
                     <Footer />
                 </>
             )}
+            <Nav />
         </>
     );
 }
