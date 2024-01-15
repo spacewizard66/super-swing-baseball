@@ -11,7 +11,7 @@ function Nav() {
     };
 
     // Smooth scrolls to About section of the web page
-    let aboutScroll = e => {
+    let aboutScroll = (e) => {
         let about = document.getElementsByClassName("section--2");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "center" });
@@ -19,15 +19,15 @@ function Nav() {
     }
 
     // Smooth scrolls to Staff section of the web page
-    let ownerScroll = e => {
+    let ownerScroll = (e) => {
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
-        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "center"  });
+        owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
         setIsOpen(false);
     }
 
     // Smooth scrolls to Footer of the web page
-    let footerScroll = e => {
+    let footerScroll = (e) => {
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
         footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "end"  });

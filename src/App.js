@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import LoadingSpinner from './components/LoadingSpinner.js';
 import Nav from './components/Nav.js';
+import Intro from './components/Intro.js';
 import Main from './components/Main.js';
 import Owner from './components/Owner.js';
 import Contact from './components/Contact.js';
@@ -12,7 +13,7 @@ function App() {
 
     // Brings viewport back to top of page on unload (refresh)
     //  to help animation effects
-    window.onunload = function () {
+    window.onunload = () => {
         window.scrollTo(0, 0);
         /* setLoading(true) */
     }
@@ -46,14 +47,13 @@ function App() {
 
     return (
         <>
-            
             {loading ? (
                 // Display the loading spinner while loading page and assets
                 <LoadingSpinner />
             ) : (
                 // Display the main content when page has finished loading
                 <>
-                    
+                    <Intro />
                     <Main />
                     <Owner />
                     <Contact />

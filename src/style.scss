@@ -34,26 +34,16 @@ a {
 }
 
 html {
-    /* background-image: url("../public/img/grass.jpg");
-    background-repeat: repeat; */
+    height: 100%;
     background-color: $black;
     scrollbar-color: $background black;
-}
-
-html {
     overflow: hidden;
-    height: 100%;
 }
 
 body {
-    height: 100%;
-    overflow: auto;
-}
-
-body {
+    height: 100vh;
     width: 100%;
-    /* height: 100vh; */
-    /* overflow: hidden; */
+    overflow: auto;
     margin: 0;
     background-size: cover;
     background-color: $black;
@@ -98,7 +88,7 @@ a {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    animation: spin 0.85s linear infinite;
+    animation: spin 0.85s ease-in-out infinite;
 }
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -114,12 +104,12 @@ a {
 .nav {
     $self: &;
     height: 100px;
-    width: 100%;
-    top: 0px;
+    width: 100vw;
+    top: 0;
     z-index: 2;
+    margin: auto;
     position: fixed;
     background-color: $background;
-    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -144,7 +134,6 @@ a {
         font-family: "Graduate", sans-serif;
         color: $black;
         margin: 0;
-        color: $black;
     }
 
     /* Responsive Hamburger Button for Mobile Users */
@@ -203,15 +192,24 @@ a {
         font-size: 24px;
         font-weight: 500;
         font-family: "Jockey One";
+        transition: 150ms ease-out;
         &:hover {
             color: $yellow;
             background-color: $black;
-            transition: 100ms ease-in;
+            transition: 150ms ease-in;
         }
     }
 
     /* Mobile Modifier When Hamburger Button
     is Pressed, Menu is Opened*/
+    &__mobile-background {
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        z-index: 1;
+        position: fixed;
+        background-color: rgba(31, 31, 31, 0.92);
+    }
     &--mobile {
         height: 400px;
         width: calc(100% - 60px);
@@ -256,16 +254,35 @@ a {
             padding: 20px;
         }
     }
-    &__mobile-background {
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        z-index: 1;
-        position: fixed;
-        background-color: rgba(31, 31, 31, 0.92);
-    }
 }
 
+
+
+
+.intro {
+    margin: 100px 0 0 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 630px;
+    max-height: 630px;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../public/img/interior.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &__title {
+        width: 80%;
+        color: $background;
+        font-size: 64px;
+        font-weight: 900;
+        font-family: "Graduate", sans-serif;
+        letter-spacing: -3px;
+        text-align: center;
+    }
+}
 
 
 /* ======================================================================== */
@@ -273,9 +290,9 @@ a {
 /**
  * ^Main Section
  */
-main {
+/* main {
     margin-top: 100px;
-}
+} */
 .section {
     $self: &;
     margin: auto;
@@ -283,13 +300,10 @@ main {
         font-family: "Jockey One";
         color: $grey;
         margin: 0;
-        /* opacity: 0; */
-        z-index: 0;
+        opacity: 0;
     }
     &__img {
-        /* border-radius: 1rem; */
         opacity: 0;
-        z-index: 0;
         box-shadow: 0 6px 30px 0 rgba(206, 206, 206, 0.5);
     }
 
@@ -301,30 +315,21 @@ main {
             opacity: 0;
         }
         #{ $self }__title {
-            /* height: 60px; */
             color: $yellow;
             font-size: 40px;
             font-weight: 500;
             font-family: "Jockey One", sans-serif;
             text-align: center;
-            /* margin: 20px 0; */
         }
         #{ $self }__info {
-            /* height: 400px; */
             font-family: "Jockey One";
             font-size: 26px;
             line-height: 40px;
             color: $grey;
-            /* border-radius: 1rem; */
-            /* padding: 20px; */
-            /* margin: 0; */
-            /* opacity: 0; */
+            opacity: 1;
         }
     }
 }
-/* .section3 {
-
-} */
 
 
 /* ======================================================================== */
@@ -501,7 +506,6 @@ main {
     .section {
         $self: &;
         width: 100vw;
-        /* padding: 0 20px; */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -517,7 +521,6 @@ main {
             height: 800px;
             width: 100vw;
             #{ $self }__group {
-                /* width: 100%; */
                 height: 580px;
                 padding: 20px;
                 display: flex;
@@ -531,21 +534,17 @@ main {
                 margin: 0;
             }
             #{ $self }__info {
-                /* height: 400px; */
                 font-family: "Jockey One";
                 font-size: 24px;
                 line-height: 30px;
                 color: $grey;
                 border-radius: 1rem;
-                /* padding: 20px; */
                 margin: 0;
-                /* opacity: 0; */
             }
         }
     }
 
     .owner {
-        /* height: 900px; */
         scroll-margin-top: 100px;
         padding: 20px;
         &__container {
@@ -654,6 +653,8 @@ main {
     }
 
 
+
+
     .section {
         $self: &;
         height: 75vh;
@@ -707,7 +708,7 @@ main {
         /* height: 660px; */
         color: $background;
         background-color: black;
-        scroll-margin-top: 100px;
+        scroll-margin-top: 20vh;
         padding: 80px 0;
         display: flex;
         justify-content: center;
@@ -741,7 +742,7 @@ main {
     }
 
     .contact {
-        height: 32vh;
+        height: 40vh;
         &__section {
             width: 760px;
         }
@@ -786,23 +787,23 @@ main {
     /* Special Class For slideIn Animation */
     will-change: transform;
     animation-name: slideIn;
-    animation-duration: 300ms;
-    animation-timing-function: ease-out;
+    animation-duration: 400ms;
+    animation-timing-function: ease;
     animation-fill-mode: both;
     -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 300ms;
+    -webkit-animation-duration: 400ms;
     -moz-animation-name: slideIn;
-    -moz-animation-duration: 300ms;
+    -moz-animation-duration: 400ms;
     -o-animation-name: slideIn;
-    -o-animation-duration: 300ms;
+    -o-animation-duration: 400ms;
 }
 @keyframes slideInLeft {
     0% {
-        -webkit-transform: translate3d(-150%,0,0);
-        transform: translate3d(-150%,0,0);
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
         opacity: 0;
     }
-    20% { opacity: 0; }
+    /* 20% { opacity: 0; } */
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -811,11 +812,11 @@ main {
 }
 @-webkit-keyframes slideInLeft {
     0% {
-        -webkit-transform: translate3d(-150%,0,0);
-        transform: translate3d(-150%,0,0);
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
         opacity: 0;
     }
-    20% { opacity: 0; }
+    /* 20% { opacity: 0; } */
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -838,11 +839,11 @@ main {
 }
 @keyframes slideInRight {
     0% {
-        -webkit-transform: translate3d(150%,0,0);
-        transform: translate3d(150%,0,0);
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
         opacity: 0;
     }
-    20% { opacity: 0; }
+    /* 20% { opacity: 0; } */
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -851,11 +852,11 @@ main {
 }
 @-webkit-keyframes slideInRight {
     0% {
-        -webkit-transform: translate3d(150%,0,0);
-        transform: translate3d(150%,0,0);
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
         opacity: 0;
     }
-    20% { opacity: 0; }
+    /* 20% { opacity: 0; } */
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -865,6 +866,7 @@ main {
 .animate-right {
     /* Special Class For slideInRight Animation */
     will-change: transform;
+    animation-iteration-count: 1;
     animation-name: slideInRight;
     animation-duration: 1000ms;
     animation-timing-function: ease;

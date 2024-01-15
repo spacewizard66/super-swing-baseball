@@ -22,7 +22,7 @@ function Main() {
             give classNames "--reversed" Modifiers, and use js and state to manipulate
             when --reversed should be applied, possibly depending on screen size/orientation.
 
-            Make the main tag a Block className, sections and their children become elements. 
+            Make the main tag a Block className, sections and their children become elements.
     */
 
     return (

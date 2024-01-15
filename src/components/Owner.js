@@ -37,7 +37,7 @@ function Owner() {
                     Northern Cambria School District. He has been the Head Baseball
                     Coach at Northern Cambria for 7 years, and during the 2014
                     season, he led Northern Cambria to its first conference
-                    championship in 30 years. {/* John will be the Manager of AAABA
+                    championship in 30 years.{/* John will be the Manager of AAABA
                     Laurel Auto Group starting Summer 2018. */}
                 </p>
             </div>
