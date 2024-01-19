@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
+import Loadable from 'react-loadable';
+
 
 import LoadingSpinner from './components/LoadingSpinner.js';
 import Nav from './components/Nav.js';
@@ -18,11 +20,18 @@ function App() {
         /* setLoading(true) */
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         setTimeout(() => {
             // Set loading to false when the page is finished loading
             setLoading(false)
         }, "500")
+        
+        }
+ */
+
+
+
+
 
         /* setLoading(false); */
 
@@ -45,23 +54,45 @@ function App() {
             // Clean up the event listener when the component unmounts
             // return () => window.removeEventListener('load', finishLoading);
         } */
-    }, []);
+    /* }, []); */
+/* 
+    function All() {
+        <>
+            <Nav />
+            <Intro />
+            <Main />
+            <Owner />
+            <Contact />
+            <Footer />
+        </>
+    }
+ */
+    /* const LazyLoaded = React.lazy(() => {
+        return new Promise(resolve => setTimeout(resolve, 500)).then(
+            () => import("./components/Intro.js")
+        )
+    }) */
+
+    /* const LoadableComp = Loadable({
+        loader: () => import("./components/Intro.js"),
+        loading: () => <LoadingSpinner />
+    }) */
 
     return (
         <>
-            {loading ? (
-                // Display the loading spinner while loading page and assets
-                <LoadingSpinner />
-            ) : (
-                <>
-                    <Intro />
-                    <Main />
-                    <Owner />
-                    <Contact />
-                    <Footer />
-                </>
-            )}
+            
+
+            {/* <Suspense fallback={<LoadingSpinner />}>
+                <LazyLoaded />
+            </Suspense> */}
+
+            {/* <LoadableComp /> */}
             <Nav />
+            <Intro />
+            <Main />
+            <Owner />
+            <Contact />
+            <Footer />
         </>
     );
 }
