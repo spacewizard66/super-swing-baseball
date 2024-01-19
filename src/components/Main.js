@@ -29,9 +29,10 @@ function Main() {
         <main>
             <section ref={section1ref} className="section section--1">
                 <p className={`${"section__info"} ${section1 ? "animate-left" : ""}`}>
-                    &emsp;Our goal is to help develop players fundamentally
-                    and make them successful on and off the field. We encourage players to do their best, and they
-                    have immense fun doing so.
+                    &emsp;Here at Super Swing, our goal is to help develop players fundamentally
+                    and make them successful on and off the field. We encourage players to do their best, 
+                    and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
+                    necessary skills to the beloved sport.
                 </p>
                 <img
                     className={`section__img ${section1 ? "animate-right" : ""}`}
@@ -46,8 +47,7 @@ function Main() {
                         About Us
                     </h2>
                     <p className="section__info">
-                        &emsp;Here at Super Swing, we are proud to offer detailed training in baseball/softball and how to apply
-                        necessary skills to the beloved sport.
+                        &emsp;
                         All the instructors have college experience and they strive to get the most out of their
                         students. The dedicated staff work on important skills
                         such as fundamentals, technique, form, strategy, and personality, all while enjoying the sport.

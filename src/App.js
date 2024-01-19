@@ -19,10 +19,12 @@ function App() {
     }
 
     useEffect(() => {
-        setTimeout(() => {
+        /* setTimeout(() => {
             // Set loading to false when the page is finished loading
             setLoading(false)
-        }, "250")
+        }, "550") */
+
+        setLoading(false);
 
         /* window.onload = () => {
             finishLoading();
@@ -50,8 +52,7 @@ function App() {
             {loading ? (
                 // Display the loading spinner while loading page and assets
                 <LoadingSpinner />
-            ) : (
-                // Display the main content when page has finished loading
+            ) : (<></>)}
                 <>
                     <Intro />
                     <Main />
@@ -59,7 +60,6 @@ function App() {
                     <Contact />
                     <Footer />
                 </>
-            )}
             <Nav />
         </>
     );

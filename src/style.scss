@@ -81,15 +81,17 @@ a {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    z-index: 33;
+    &__content {
+        /* border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db; */
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 0.85s ease-in-out infinite;
+    }
 }
-.spinner-content {
-    /* border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db; */
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    animation: spin 0.85s ease-in-out infinite;
-}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -257,8 +259,11 @@ a {
 }
 
 
-
-
+/* ======================================================================== */
+/* ======================================================================== */
+/**
+ * ^Intro
+ */
 .intro {
     margin: 100px 0 0 0;
     box-sizing: border-box;
@@ -274,13 +279,14 @@ a {
     justify-content: center;
     align-items: center;
     &__title {
-        width: 80%;
+        width: 1200px;
         color: $background;
         font-size: 64px;
         font-weight: 900;
         font-family: "Graduate", sans-serif;
         letter-spacing: -3px;
         text-align: center;
+        animation-duration: 1600ms;
     }
 }
 
@@ -296,6 +302,7 @@ a {
 .section {
     $self: &;
     margin: auto;
+    text-align: center;
     &__info {
         font-family: "Jockey One";
         color: $grey;
@@ -311,20 +318,20 @@ a {
         /* #{ $self }__img {
             display: none;
         } */
-        #{ $self }__group {
+        /* #{ $self }__group {
             opacity: 0;
-        }
+        } */
         #{ $self }__title {
             color: $yellow;
-            font-size: 40px;
+            /* font-size: 40px; */
             font-weight: 500;
             font-family: "Jockey One", sans-serif;
             text-align: center;
         }
         #{ $self }__info {
-            font-family: "Jockey One";
-            font-size: 26px;
-            line-height: 40px;
+            font-family: "Jockey One", sans-serif;
+            /* font-size: 26px; */
+            /* line-height: 40px; */
             color: $grey;
             opacity: 1;
         }
@@ -502,41 +509,50 @@ a {
         }
     }
 
+    .intro {
+        max-height: 500px;
+        &__title {
+            font-size: 44px;
+        }
+    }
+
 
     .section {
         $self: &;
+        height: 700px;
         width: 100vw;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         &__info {
-            height: 300px;
-            width: 300px;
+            /* height: 300px; */
+            width: calc(100vw - 40px);
+            font-size: 20px;
         }
         &__img {
             width: 90vw;
         }
         &--2 {
-            height: 800px;
-            width: 100vw;
+            /* height: 800px; */
+            /* width: 100vw; */
             #{ $self }__group {
-                height: 580px;
-                padding: 20px;
+                /* height: calc(); */
+                /* padding: 20px; */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
             }
             #{ $self }__title {
-                height: 60px;
+                /* height: 60px; */
                 font-weight: 500;
                 margin: 0;
             }
             #{ $self }__info {
                 font-family: "Jockey One";
-                font-size: 24px;
-                line-height: 30px;
+                /* font-size: 24px; */
+                /* line-height: 30px; */
                 color: $grey;
                 border-radius: 1rem;
                 margin: 0;
@@ -657,49 +673,59 @@ a {
 
     .section {
         $self: &;
-        height: 75vh;
+        height: 65vh;
         max-width: 1200px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         &__info {
-            height: 500px;
-            /* width: 100%; */
-            font-size: 26px;
+            width: calc((100vw - 60px) / 2.25);
+            max-width: 500px;
+            max-height: 450px;
+            font-size: 20px;
             line-height: 40px;
+            word-spacing: 3px;
+            text-align: center;
+            /* margin: auto; */
+            /* letter-spacing: 1px; */
         }
         &__img {
-            /* height: 500px; */
-            /* width: 600px; */
-            width: 40%;
+            width: calc((100vw - 60px) / 2.25);
+            max-width: 500px;
+            max-height: 450px;
+            flex-shrink: 0;
+            /* margin: auto; */
+            /* width: 100%; */
         }
         &--2 {
             #{ $self }__group {
-                width: 40%;
-                max-width: 500px;
-                /* height: 100%; */
+                /* width: 40%; */
+                /* max-width: 500px; */
+                /* height: 450px; */
                 opacity: 0;
+                /* margin: auto; */
             }
             #{ $self }__title {
-                height: 60px;
-                color: $yellow;
+                height: 50px;
                 font-size: 40px;
                 font-weight: 500;
                 font-family: "Jockey One", sans-serif;
                 text-align: center;
-                /* margin: 20px 0; */
+                margin: 0 0 20px 0;
             }
             #{ $self }__info {
-                height: 400px;
-                font-family: "Jockey One";
-                font-size: 26px;
-                line-height: 40px;
+                /* height: 400px; */
+                /* width: 100%; */
+                /* font-family: "Jockey One"; */
+                /* font-size: 20px; */
+                /* line-height: 40px; */
                 /* color: $grey; */
-                border-radius: 1rem;
+                /* border-radius: 1rem; */
                 /* padding: 20px; */
-                margin: 0;
+                /* margin: 0; */
                 /* opacity: 0; */
+                /* word-wrap: normal; */
             }
         }
     }
@@ -787,15 +813,15 @@ a {
     /* Special Class For slideIn Animation */
     will-change: transform;
     animation-name: slideIn;
-    animation-duration: 400ms;
+    animation-duration: 600ms;
     animation-timing-function: ease;
     animation-fill-mode: both;
     -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 400ms;
+    -webkit-animation-duration: 600ms;
     -moz-animation-name: slideIn;
-    -moz-animation-duration: 400ms;
+    -moz-animation-duration: 600ms;
     -o-animation-name: slideIn;
-    -o-animation-duration: 400ms;
+    -o-animation-duration: 600ms;
 }
 @keyframes slideInLeft {
     0% {
