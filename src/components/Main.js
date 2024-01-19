@@ -6,7 +6,7 @@ function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.4,
+        threshold: 0.3,
     }
 
     // useInView hooks for each project that returns
@@ -28,21 +28,21 @@ function Main() {
     return (
         <main>
             <section ref={section1ref} className="section section--1">
-                <p className={`${"section__info"} ${section1 ? "animate-left" : ""}`}>
+                <p className={`${"section__info"} ${section1 ? "animate-slideIn-left" : ""}`}>
                     &emsp;Here at Super Swing, our goal is to help develop players fundamentally
                     and make them successful on and off the field. We encourage players to do their best, 
                     and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
                     necessary skills to the beloved sport.
                 </p>
                 <img
-                    className={`section__img ${section1 ? "animate-right" : ""}`}
+                    className={`section__img ${section1 ? "animate-slideIn-right" : ""}`}
                     src="./img/team.webp"
                     alt="Team">
                 </img>
             </section>
             <section ref={section2ref} className="section section--2">
-                <img className={`section__img ${section2 ? "animate-left" : ""}`} src="./img/interior.jpg" alt="Building Interior"></img>
-                <div className={`section__group ${section2 ? "animate-right" : ""}`}>
+                <img className={`section__img ${section2 ? "animate-slideIn-left" : ""}`} src="./img/interior.jpg" alt="Building Interior"></img>
+                <div className={`section__group ${section2 ? "animate-slideIn-right" : ""}`}>
                     <h2 className="section__title">
                         About Us
                     </h2>
@@ -56,12 +56,12 @@ function Main() {
                 </div>
             </section>
             <section ref={section3ref} className="section section--3">
-                <p className={`section__info ${section3 ? "animate-left" : ""}`}>
+                <p className={`section__info ${section3 ? "animate-slideIn-left" : ""}`}>
                     &emsp;sljhdfk jsh dfkjs hdfks adfsd fsdfsd fsdfsd fdfsdfsd fsdfsd fsdf sdfsdf
                     sdfsdfsd fsdfsdffffff fff ffffff ffffff  ffffffff ffffffff ffffff
                     dff   ffffffffff ffffff fff  ffffff fffff
                 </p>
-                <img className={`section__img ${section3 ? "animate-right" : ""}`} src="./img/field.jpg" alt="Field"></img>
+                <img className={`section__img ${section3 ? "animate-slideIn-right" : ""}`} src="./img/field.jpg" alt="Field"></img>
             </section>
         </main>
     );
