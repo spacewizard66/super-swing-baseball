@@ -1,8 +1,6 @@
-import React, { useEffect, useState, Suspense } from 'react';
-import Loadable from 'react-loadable';
-
-
-import LoadingSpinner from './components/LoadingSpinner.js';
+import React, { useEffect, useState } from 'react';
+/* import Loadable from 'react-loadable'; */
+/* import LoadingSpinner from './components/LoadingSpinner.js'; */
 import Nav from './components/Nav.js';
 import Intro from './components/Intro.js';
 import Main from './components/Main.js';
@@ -11,7 +9,7 @@ import Contact from './components/Contact.js';
 import Footer from './components/Footer.js';
 
 function App() {
-    const [loading, setLoading] = useState(true);
+    /* const [loading, setLoading] = useState(true); */
 
     // Brings viewport back to top of page on unload (refresh)
     //  to help animation effects
@@ -67,11 +65,7 @@ function App() {
         </>
     }
  */
-    /* const LazyLoaded = React.lazy(() => {
-        return new Promise(resolve => setTimeout(resolve, 500)).then(
-            () => import("./components/Intro.js")
-        )
-    }) */
+    
 
     /* const LoadableComp = Loadable({
         loader: () => import("./components/Intro.js"),
@@ -80,8 +74,6 @@ function App() {
 
     return (
         <>
-            
-
             {/* <Suspense fallback={<LoadingSpinner />}>
                 <LazyLoaded />
             </Suspense> */}
