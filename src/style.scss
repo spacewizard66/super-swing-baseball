@@ -269,8 +269,8 @@ a {
     margin: 100px 0 0 0;
     box-sizing: border-box;
     width: 100%;
-    height: 630px;
-    max-height: 630px;
+    /* height: 630px; */
+    /* max-height: 630px; */
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../public/img/interior.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -280,7 +280,7 @@ a {
     justify-content: center;
     align-items: center;
     &__title {
-        width: 1200px;
+        max-width: 1200px;
         color: $background;
         font-size: 64px;
         font-weight: 900;
@@ -511,7 +511,7 @@ a {
     }
 
     .intro {
-        max-height: 500px;
+        height: 460px;
         &__title {
             font-size: 44px;
         }
@@ -590,13 +590,14 @@ a {
 
 
     .contact {
-        height: 40vh;
-        min-height: 380px;
+        /* height: 80vh; */
+        height: 340px;
         width: 100%;
+        padding: 40px 0 60px 0;
         background-color: $black;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         &__title {
             color: $yellow;
@@ -676,6 +677,9 @@ a {
         }
     }
 
+    .intro {
+        height: 630px;
+    }
 
 
 

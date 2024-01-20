@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 /* import Loadable from 'react-loadable'; */
 /* import LoadingSpinner from './components/LoadingSpinner.js'; */
-import Nav from './components/Nav.js';
+/* import Nav from './components/Nav.js'; */
 import Intro from './components/Intro.js';
 import Main from './components/Main.js';
 import Owner from './components/Owner.js';
@@ -79,7 +79,7 @@ function App() {
             </Suspense> */}
 
             {/* <LoadableComp /> */}
-            <Nav />
+            {/* <Nav /> */}
             <Intro />
             <Main />
             <Owner />
