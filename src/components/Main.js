@@ -57,9 +57,10 @@ function Main() {
             </section>
             <section ref={section3ref} className="section section--3">
                 <p className={`section__info ${section3 ? "animate-slideIn-left" : ""}`}>
-                    &emsp;sljhdfk jsh dfkjs hdfks adfsd fsdfsd fsdfsd fdfsdfsd fsdfsd fsdf sdfsdf
-                    sdfsdfsd fsdfsdffffff fff ffffff ffffff  ffffffff ffffffff ffffff
-                    dff   ffffffffff ffffff fff  ffffff fffff
+                    &emsp;Discover the winning edge with our professional coaches 
+                    who bring years of experience to every training session.
+                    Train like a pro with cutting-edge techniques and proven strategies 
+                    to enhance your performance.
                 </p>
                 <img className={`section__img ${section3 ? "animate-slideIn-right" : ""}`} src="./img/field.jpg" alt="Field"></img>
             </section>
