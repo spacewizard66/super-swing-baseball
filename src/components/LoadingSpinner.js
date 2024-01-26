@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LoadingSpinner() {
+export default function LoadingSpinner() {
     return (
         <section className="spinner">
             <img className="spinner__content" alt="" src="./img/favicon/baseball-96.png"></img>
@@ -8,4 +8,3 @@ function LoadingSpinner() {
         </section>
     );
 }
-export default LoadingSpinner;

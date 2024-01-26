@@ -1,4 +1,4 @@
-function Footer() {
+export default function Footer() {
     /* Functions Get Current Year for Copyright Tag */
     var d = new Date();
     var currYear = d.getFullYear();
@@ -29,4 +29,3 @@ function Footer() {
         </footer>
     );
 }
-export default Footer;

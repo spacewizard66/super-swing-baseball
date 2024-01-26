@@ -1,4 +1,4 @@
-function Contact() {
+export default function Contact() {
     return (
         <section className="contact">
             <header>
@@ -33,4 +33,3 @@ function Contact() {
         </section>
     );
 }
-export default Contact;

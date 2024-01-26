@@ -2,11 +2,11 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import '../style.scss';
 
-function Main() {
+export default function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.3,
+        threshold: 0.4,
     }
 
     // useInView hooks for each project that returns
@@ -15,15 +15,6 @@ function Main() {
     const [ section1ref, section1 ] = useInView(options);
     const [ section2ref, section2 ] = useInView(options);
     const [ section3ref, section3 ] = useInView(options);
-
-
-    /*
-        IDEA::
-            give classNames "--reversed" Modifiers, and use js and state to manipulate
-            when --reversed should be applied, possibly depending on screen size/orientation.
-
-            Make the main tag a Block className, sections and their children become elements.
-    */
 
     return (
         <main>
@@ -36,12 +27,12 @@ function Main() {
                 </p>
                 <img
                     className={`section__img ${section1 ? "animate-slideIn-right" : ""}`}
-                    src="./img/team.webp"
+                    src="./img/team-kids.jpg"
                     alt="Team">
                 </img>
             </section>
             <section ref={section2ref} className="section section--2">
-                <img className={`section__img ${section2 ? "animate-slideIn-left" : ""}`} src="./img/interior.jpg" alt="Building Interior"></img>
+                <img className={`section__img ${section2 ? "animate-slideIn-left" : ""}`} src="./img/field.jpg" alt="Building Interior"></img>
                 <div className={`section__group ${section2 ? "animate-slideIn-right" : ""}`}>
                     <h2 className="section__title">
                         About Us
@@ -62,9 +53,8 @@ function Main() {
                     Train like a pro with cutting-edge techniques and proven strategies 
                     to enhance your performance.
                 </p>
-                <img className={`section__img ${section3 ? "animate-slideIn-right" : ""}`} src="./img/field.jpg" alt="Field"></img>
+                <img className={`section__img ${section3 ? "animate-slideIn-right" : ""}`} src="./img/team.webp" alt="Field"></img>
             </section>
         </main>
     );
 }
-export default Main;

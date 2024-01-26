@@ -751,15 +751,15 @@ a {
 .animate-slideIn-bottom {
     will-change: transform;
     animation-name: slideIn-bottom;
-    animation-duration: 600ms;
+    animation-duration: 800ms;
     animation-timing-function: ease;
     animation-fill-mode: both;
     -webkit-animation-name: slideIn-bottom;
-    -webkit-animation-duration: 600ms;
+    -webkit-animation-duration: 800ms;
     -moz-animation-name: slideIn-bottom;
-    -moz-animation-duration: 600ms;
+    -moz-animation-duration: 800ms;
     -o-animation-name: slideIn-bottom;
-    -o-animation-duration: 600ms;
+    -o-animation-duration: 800ms;
 }
 @keyframes slideIn-bottom {
     0% {

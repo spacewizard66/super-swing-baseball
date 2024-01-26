@@ -1,53 +1,36 @@
 import React, { useState } from 'react';
 
-function Nav() {
-
+export default function Nav() {
     const [isOpen, setIsOpen] = useState(false);
-    /* const [isScrolled, setIsScrolled] = useState(false); */
 
     // Function that changes state (open/closed) of mobile nav menu
     const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    // Smooth scrolls to About section of the web page
-    let aboutScroll = (e) => {
+    // Smooth Scrolling Functions
+    let aboutScroll = (e) => { // Scrolls to About section of the web page
         let about = document.getElementsByClassName("section--2");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "center" });
         setIsOpen(false);
     }
-
-    // Smooth scrolls to Staff section of the web page
-    let ownerScroll = (e) => {
+    let ownerScroll = (e) => { // Scrolls to Staff section of the web page
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
         owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
         setIsOpen(false);
     }
-
-    // Smooth scrolls to Footer of the web page
-    let footerScroll = (e) => {
+    let footerScroll = (e) => { // Scrolls to Footer of the web page
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
         footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "end"  });
         setIsOpen(false);
     }
 
-    // Checks if the page has been scrolled from the top by 5 pixels,
-    // then changes state accordingly.
-    /* window.addEventListener("scroll", function(){
-        if (window.scrollY > 4) {
-            setIsScrolled(true)
-        } else {
-            setIsScrolled(false)
-        }
-    }); */
-
     return (
         <header>
-            <nav className="nav">
-                {/* Logo and Title */}
+            <nav className="nav animate-slideIn-top">
                 <a className="nav__relink" href="/">
                     <img className="nav__logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
                     <section className="nav__title">
@@ -56,17 +39,14 @@ function Nav() {
                         </h1>
                     </section>
                 </a>
-                {/* Hamburger Button for Mobile Navigation */}
                 <div className="nav__hamburger">
-                    <button className={`nav__hamburger-button ${isOpen ? 'nav__hamburger-button--open' : ''}`} onClick={toggleMobileMenu}>
+                    <button className={`nav__hamburger-button ${isOpen ? 'nav__hamburger-button--open' : ''}`} onClick={toggleMobileMenu} type="button">
                         <div></div>
                         <div></div>
                         <div></div>
                     </button>
                 </div>
-                {/* Checks if Hamburger Button has been Opened, Returns Appropriate Markup */}
-                {isOpen ? (
-                    // Mobile Markup
+                {isOpen ? ( //Checks if Hamburger Button is Opened for mobile
                     <>
                         <section className="nav__menu nav--mobile">
                             <ul className="nav__menu-items">
@@ -102,8 +82,7 @@ function Nav() {
                         <div className="nav__mobile-background" onClick={toggleMobileMenu}>
                         </div>
                     </>
-                ) : (
-                    // Desktop Markup
+                ) : ( // Desktop Markup (Excludes List Element)
                     <section className="nav__menu">
                                 <a
                                     className="nav__link"
@@ -133,4 +112,3 @@ function Nav() {
         </header>
     );
 }
-export default Nav;

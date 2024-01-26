@@ -1,4 +1,4 @@
-function Owner() {
+export default function Owner() {
 	return (
 		<section className="owner">
             <div className="owner__container">
@@ -44,4 +44,3 @@ function Owner() {
 		</section>
 	);
 }
-export default Owner;
