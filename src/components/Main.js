@@ -19,17 +19,20 @@ export default function Main() {
     return (
         <main>
             <section ref={section1ref} className="section section--1">
-                <p className={`${"section__info"} ${section1 ? "animate-slideIn-left" : ""}`}>
-                    &emsp;Here at Super Swing, our goal is to help develop players fundamentally
-                    and make them successful on and off the field. We encourage players to do their best, 
-                    and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
-                    necessary skills to the beloved sport.
-                </p>
-                <img
-                    className={`section__img ${section1 ? "animate-slideIn-right" : ""}`}
-                    src="./img/team-kids.jpg"
-                    alt="Team">
-                </img>
+                <h2 className="section__title">Sports Training in Northern Cambria, PA</h2>
+                <div className="section__group">
+                    <p className={`${"section__info"} ${section1 ? "animate-slideIn-left" : ""}`}>
+                        &emsp;Here at Super Swing, our goal is to help develop players fundamentally
+                        and make them successful on and off the field. We encourage players to do their best, 
+                        and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
+                        necessary skills to the beloved sport.
+                    </p>
+                    <img
+                        className={`section__img ${section1 ? "animate-slideIn-right" : ""}`}
+                        src="./img/team-kids.jpg"
+                        alt="Team">
+                    </img>
+                </div>
             </section>
             <section ref={section2ref} className="section section--2">
                 <img className={`section__img ${section2 ? "animate-slideIn-left" : ""}`} src="./img/field.jpg" alt="Building Interior"></img>
