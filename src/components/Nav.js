@@ -10,9 +10,9 @@ export default function Nav() {
 
     // Smooth Scrolling Functions
     let aboutScroll = (e) => { // Scrolls to About section of the web page
-        let about = document.getElementsByClassName("section--2");
+        let about = document.getElementsByClassName("about");
         e.preventDefault();  // Stop Page Reloading
-        about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "start" });
         setIsOpen(false);
     }
     let ownerScroll = (e) => { // Scrolls to Staff section of the web page

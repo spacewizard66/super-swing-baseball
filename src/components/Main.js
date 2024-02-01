@@ -6,7 +6,7 @@ export default function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.3,
+        threshold: 0.5,
     }
 
     // useInView hooks for each project that returns
@@ -16,27 +16,51 @@ export default function Main() {
     const [ section2ref, section2 ] = useInView(options);
     const [ section3ref, section3 ] = useInView(options);
 
+    // New animations for Mobile!
+    const [ section1TitleRef, section1Title ] = useInView(options);
+    const [ section1InfoRef, section1Info ] = useInView(options);
+    const [ section1ImgRef, section1Img ] = useInView(options);
+
+    const [ section2ImgRef, section2Img ] = useInView(options);
+    const [ section2InfoRef, section2Info ] = useInView(options);
+
+    const [ section3InfoRef, section3Info ] = useInView(options);
+    const [ section3ImgRef, section3Img ] = useInView(options);
+
     return (
         <main>
-            <section ref={section1ref} className="section section--1">
-                <h2 className="section__title animate-slideIn-bottom">Sports Training in Northern Cambria, PA</h2>
+            <section className="section section--1">
+                <h2
+                    ref={section1TitleRef}
+                    className={`${"section__title"} ${section1Title ? "animate1" : ""}`}
+                >
+                    Sports Training in Northern Cambria, PA
+                </h2>
                 <div className="section__group">
-                    <p className={`${"section__info"} ${section1 ? "animate-slideIn-left" : ""}`}>
+                    <p ref={section1InfoRef} className={`${"section__info"} ${section1Info ? "animate2 animate-mobile" : ""}`}>
                         &emsp;Here at Super Swing, our goal is to help develop players fundamentally
                         and make them successful on and off the field. We encourage players to do their best, 
                         and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
                         necessary skills to the beloved sport.
                     </p>
                     <img
-                        className={`section__img ${section1 ? "animate-slideIn-right" : ""}`}
+                        ref={section1ImgRef}
+                        className={`section__img ${section1Img ? "animate3" : ""}`}
+                        /* className="section__img" */
                         src="./img/team-kids.jpg"
                         alt="Team">
                     </img>
                 </div>
             </section>
-            <section ref={section2ref} className="section section--2">
-                <img className={`section__img ${section2 ? "animate-slideIn-left" : ""}`} src="./img/field.jpg" alt="Building Interior"></img>
-                <div className={`section__group ${section2 ? "animate-slideIn-right" : ""}`}>
+            <section className="section section--2">
+                <img
+                    ref={section2ImgRef}
+                    className={`section__img ${section2Img ? "animate2" : ""}`}
+                    /* className="section__img" */
+                    src="./img/field.jpg"
+                    alt="Building Interior">
+                </img>
+                <div ref={section2InfoRef} className={`about section__group ${section2Info ? "animate3 animate-mobile" : ""}`}>
                     <h2 className="section__title">
                         About Us
                     </h2>
@@ -49,14 +73,20 @@ export default function Main() {
                     </p>
                 </div>
             </section>
-            <section ref={section3ref} className="section section--3">
-                <p className={`section__info ${section3 ? "animate-slideIn-left" : ""}`}>
+            <section className="section section--3">
+                <p ref={section3InfoRef} className={`section__info ${section3Info ? "animate2 animate-mobile" : ""}`}>
                     &emsp;Discover the winning edge with our professional coaches 
                     who bring years of experience to every training session.
                     Train like a pro with cutting-edge techniques and proven strategies 
                     to enhance your performance.
                 </p>
-                <img className={`section__img ${section3 ? "animate-slideIn-right" : ""}`} src="./img/team.webp" alt="Field"></img>
+                <img
+                    ref={section3ImgRef}
+                    className={`section__img ${section3Img ? "animate3" : ""}`}
+                    /* className="section__img" */
+                    src="./img/team.webp"
+                    alt="Field">
+                </img>
             </section>
         </main>
     );

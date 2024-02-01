@@ -42,7 +42,7 @@ html{
     padding: 0;
     overflow: hidden;
 }
-body{
+body, #root{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -80,20 +80,19 @@ a {
  * ^LOADING SPINNER
  */
 .spinner {
-    height: 100vh;
-    margin-top: 100px;
+    height: 100%;
+    /* margin-top: 50%; */
     color: $yellow;
     font-size: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 33;
     &__content {
         border-radius: 50%;
         width: 100px;
         height: 100px;
-        animation: spin 0.85s ease-in-out infinite;
+        animation: spin 0.85s ease-in-out 5;
     }
 }
 
@@ -281,6 +280,7 @@ a {
         letter-spacing: -2px;
         text-align: center;
         animation-duration: 1600ms;
+        opacity: 0;
     }
 }
 
@@ -309,16 +309,20 @@ a {
             font-weight: 500;
             font-family: "Jockey One", sans-serif;
             text-align: center;
-            animation-delay: 300ms;
+            opacity: 0;
+            animation-delay: 400ms;
         }
         #{ $self }__info {
-            animation-delay: 400ms;
+            animation-delay: 600ms;
         }
         #{ $self }__img {
-            animation-delay: 400ms;
+            animation-delay: 600ms;
         }
     }
     &--2 {
+        #{ $self }__group {
+            opacity: 0;
+        }
         #{ $self }__title {
             color: $yellow;
             font-weight: 500;
@@ -451,6 +455,20 @@ a {
     }
 }
 
+.animate1 {
+    will-change: transform;
+    animation-name: slideIn-bottom;
+    animation-duration: 800ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideIn-bottom;
+    -webkit-animation-duration: 800ms;
+    -moz-animation-name: slideIn-bottom;
+    -moz-animation-duration: 800ms;
+    -o-animation-name: slideIn-bottom;
+    -o-animation-duration: 800ms;
+}
+
 
 
 
@@ -516,13 +534,14 @@ a {
             width: calc(100vw - 60px);
             max-width: 500px;
             font-size: 20px;
-            margin: 0 0 40px 0;
+            margin: 0 0 60px 0;
         }
         &__img {
             width: calc(100vw - 60px);
             max-width: 460px;
             max-height: 380px;
-            margin: 0 0 40px 0;
+            margin: 0 0 60px 0;
+            opacity: 1;
         }
         &--1 {
             /* height: 710px; */
@@ -539,14 +558,16 @@ a {
                 /* font-family: "Graduate", sans-serif; */
                 /* letter-spacing: -3px; */
                 text-align: center;
-                margin: 40px 0 10px 0;
+                margin: 60px 0 20px 0;
             }
             /* #{ $self }__info {
                 margin: 0 0 40px 0;
             } */
         }
         &--2 {
+            scroll-margin: 90%;
             #{ $self }__group {
+                scroll-margin: 100px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
@@ -555,7 +576,7 @@ a {
             #{ $self }__title {
                 font-size: 34px;
                 font-weight: 500;
-                margin: 0 0 10px 0;
+                margin: 0 0 20px 0;
             }
             #{ $self }__info {
                 font-family: "Jockey One";
@@ -567,7 +588,7 @@ a {
     }
 
     .owner {
-        scroll-margin-top: 100px;
+        scroll-margin-top: 70px;
         padding: 40px 25px 60px 25px;
         &__container {
             height: 100%;
@@ -640,6 +661,20 @@ a {
         &__copyright {
             width: 90%;
         }
+    }
+
+    .animate-mobile {
+        will-change: transform;
+        animation-name: slideIn-bottom;
+        animation-duration: 800ms;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        -webkit-animation-name: slideIn-bottom;
+        -webkit-animation-duration: 800ms;
+        -moz-animation-name: slideIn-bottom;
+        -moz-animation-duration: 800ms;
+        -o-animation-name: slideIn-bottom;
+        -o-animation-duration: 800ms;
     }
 }
 
@@ -800,6 +835,34 @@ a {
             width: 300px;
         }
     }
+
+    .animate2 {
+        will-change: transform;
+        animation-name: slideIn-left;
+        animation-duration: 1000ms;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        -webkit-animation-name: slideIn-left;
+        -webkit-animation-duration: 1000ms;
+        -moz-animation-name: slideIn-left;
+        -moz-animation-duration: 1000ms;
+        -o-animation-name: slideIn-left;
+        -o-animation-duration: 1000ms;
+    }
+    .animate3 {
+        will-change: transform;
+        animation-iteration-count: 1;
+        animation-name: slideIn-right;
+        animation-duration: 1000ms;
+        animation-timing-function: ease;
+        animation-fill-mode: both;
+        -webkit-animation-name: slideIn-right;
+        -webkit-animation-duration: 1000ms;
+        -moz-animation-name: slideIn-right;
+        -moz-animation-duration: 1000ms;
+        -o-animation-name: slideIn-right;
+        -o-animation-duration: 1000ms;
+    }
 }
 
 
@@ -847,7 +910,7 @@ a {
 }
 @keyframes slideIn-bottom {
     0% {
-        transform: translateY(100%);
+        transform: translateY(30%);
         opacity: 0;
     }
     100% {
