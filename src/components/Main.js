@@ -6,7 +6,7 @@ export default function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.4,
+        threshold: 0.3,
     }
 
     // useInView hooks for each project that returns
@@ -19,7 +19,7 @@ export default function Main() {
     return (
         <main>
             <section ref={section1ref} className="section section--1">
-                <h2 className="section__title">Sports Training in Northern Cambria, PA</h2>
+                <h2 className="section__title animate-slideIn-bottom">Sports Training in Northern Cambria, PA</h2>
                 <div className="section__group">
                     <p className={`${"section__info"} ${section1 ? "animate-slideIn-left" : ""}`}>
                         &emsp;Here at Super Swing, our goal is to help develop players fundamentally

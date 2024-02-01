@@ -6,6 +6,8 @@ import Nav from './components/Nav.js'
 
 const LazyLoaded = lazy(() => import('./App.js'))
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
