@@ -6,7 +6,7 @@ export default function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 0.5,
+        threshold: 1,
     }
 
     // useInView hooks for each project that returns
