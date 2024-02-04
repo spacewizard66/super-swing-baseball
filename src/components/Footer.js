@@ -23,7 +23,6 @@ export default function Footer() {
             </section>
             <small className="footer__copyright">
                 Copyright &copy; {currYear} Super Swing Baseball LLC.<br/>
-                {/* All Rights Reserved.<br/> */}
                 Created by Mason Galat
             </small>
         </footer>

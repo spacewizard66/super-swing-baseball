@@ -6,17 +6,12 @@ export default function Main() {
     // Declaring options for useInView() hook
     const options = {
         triggerOnce: true,
-        threshold: 1,
+        threshold: 0.5,
     }
 
-    // useInView hooks for each project that returns
-    //  a boolean (true, false) of ref if in viewport.
-    // Accomplishes animation logic for projects.
-    const [ section1ref, section1 ] = useInView(options);
-    const [ section2ref, section2 ] = useInView(options);
-    const [ section3ref, section3 ] = useInView(options);
-
-    // New animations for Mobile!
+    // useInView hooks that returns a boolean
+    // (true, false) of ref if in viewport.
+    // Accomplishes animation logic.
     const [ section1TitleRef, section1Title ] = useInView(options);
     const [ section1InfoRef, section1Info ] = useInView(options);
     const [ section1ImgRef, section1Img ] = useInView(options);

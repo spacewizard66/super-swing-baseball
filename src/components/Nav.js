@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 export default function Nav() {
     const [isOpen, setIsOpen] = useState(false);
 
-    // Function that changes state (open/closed) of mobile nav menu
+    // Function that toggles state (open/not open) of mobile nav menu
     const toggleMobileMenu = () => {
         setIsOpen(!isOpen);
     };
 
     // Smooth Scrolling Functions
-    let aboutScroll = (e) => { // Scrolls to About section of the web page
+    let aboutScroll = (e) => { // Scrolls to About section of the page
         let about = document.getElementsByClassName("about");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "start" });
         setIsOpen(false);
     }
-    let ownerScroll = (e) => { // Scrolls to Staff section of the web page
+    let ownerScroll = (e) => { // Scrolls to Staff section of the page
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
         owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
         setIsOpen(false);
     }
-    let footerScroll = (e) => { // Scrolls to Footer of the web page
+    let footerScroll = (e) => { // Scrolls to Footer of the page
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
         footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "end"  });
@@ -46,7 +46,7 @@ export default function Nav() {
                         <div></div>
                     </button>
                 </div>
-                {isOpen ? ( //Checks if Hamburger Button is Opened for mobile
+                {isOpen ? ( // Checks if Hamburger Button is Opened On Mobile
                     <>
                         <section className="nav__menu nav--mobile">
                             <ul className="nav__menu-items">

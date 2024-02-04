@@ -5,8 +5,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
+
 /**
- *  ^VARIABLES AND COLORS
+ *  ^VARIABLES/COLORS
  */
 $yellow: #edce09;
 $brown: #a16b0b;
@@ -15,63 +16,46 @@ $grey: #d6d7d9;
 $white: #fff;
 $background: #f3ffff;
 
+
 /**
  *  ^GLOBAL STYLES
  */
-// Remove tap highlight on iOS
 input,
 textarea,
 button,
 select,
-a {
+a { // Remove tap highlight on iOS
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-decoration: none;
 }
 * {
     font-family: "Jockey One";
     -webkit-font-smoothing: antialiased;
-    overscroll-behavior-y: none;
 }
 html {
-    /* height: 100%; */
-    background-color: $black;
-    scrollbar-color: $background black;
-    /* overflow: hidden; */
-}
-html{
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: $black;
+    scrollbar-color: $background black;
 }
-body, #root{
+body, #root {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: auto;
 }
 body {
-    /* height: 100vh;
-    width: 100%; */
-    /* overflow: auto; */
     margin: 0;
     background-size: cover;
     background-color: $black;
-    /* background-image: linear-gradient(180deg, $background 2%, $black 98%); */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     overscroll-behavior-y: none;
-}
-main {
-    overflow: hidden;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-a {
-    text-decoration: none;
-}
-
-
 
 
 /* ======================================================================== */
@@ -94,7 +78,6 @@ a {
         animation: spin 0.85s ease-in-out 5;
     }
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
@@ -118,68 +101,28 @@ a {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    &__relink { /* Navigation Logo and Company Title */
+    &__relink { /* Nav Logo and Company Title */
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    /* &__logo {
-        height: 90px;
-    } */
-    &__title {
+    &__title { /* Nav Title Section */
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    &__title-text {
+    &__title-text { /* Nav Title */
         font-weight: 700;
         font-family: "Graduate", sans-serif;
         color: $black;
         margin: 0;
     }
-    &__hamburger { /* Responsive Hamburger Button for Mobile Users */
-        position: absolute;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 3;
-    }
-    &__hamburger-button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        margin-right: 30px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        & > * {
-            width: 30px;
-            height: 3px;
-            background-color: black;
-            margin: 3px 0;
-            transition: 300ms;
-        }
-        &--open {
-            z-index: 2;
-            & >:nth-child(1) {
-                transform: translateY(8.5px) rotate(45deg);
-            }
-            & >:nth-child(2) {
-                opacity: 0;
-            }
-            & >:nth-child(3) {
-                transform: translateY(-8.5px) rotate(-45deg);
-            }
-        }
-    }
-    &__menu { /* Menu for Nav Links */
+    &__menu { /* Menu for Desktop Nav Links */
         height: 100%;
         display: flex;
         margin-left: auto;
     }
-    &__link {
+    &__link { /* Nav Links */
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -189,21 +132,50 @@ a {
         font-weight: 500;
         font-family: "Jockey One";
         transition: 150ms ease-out;
-        &:hover {
+        &:hover { /* When Links are Hovered */
             color: $yellow;
             background-color: $black;
             transition: 150ms ease-in;
         }
     }
-    &__mobile-background { /* Mobile Modifier When Hamburger Button is Pressed, Menu is Opened */
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        z-index: 1;
-        position: fixed;
-        background-color: rgba(31, 31, 31, 0.92);
+    &__hamburger { /* Hamburger Div for Mobile Users */
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
     }
-    &--mobile {
+    &__hamburger-button { /* Hamburger Button for Mobile Users */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        & > * { /* All Hamburger Button Lines */
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            margin: 3px 0;
+            transition: 300ms;
+        }
+        &--open { /* Modifier on Hamburger Button when Open */
+            margin-right: 20px;
+            z-index: 2;
+            & >:nth-child(1) { /* Line 1 */
+                transform: translateY(8.5px) rotate(45deg);
+            }
+            & >:nth-child(2) {/* Line 2 */
+                opacity: 0;
+            }
+            & >:nth-child(3) { /* Line 3 */
+                transform: translateY(-8.5px) rotate(-45deg);
+            }
+        }
+    }
+    &--mobile { /* Nav Modifier for Mobile Devices */
         height: 400px;
         width: calc(100vw - 60px);
         border-radius: .75rem;
@@ -225,7 +197,7 @@ a {
         -moz-animation-duration: 150ms;
         -o-animation-name: slideIn-right;
         -o-animation-duration: 150ms;
-        #{ $self }__menu-items {
+        #{ $self }__menu-items { /* Mobile Menu List of Links */
             height: 350px;
             width: 100%;
             margin: 0;
@@ -236,16 +208,21 @@ a {
             flex-direction: column;
             justify-content: stretch;
             align-items: center;
-            li {
+            li { /* Mobile Link List Item Element */
                 width: 100%;
-                &:nth-child(1n+2) { // Creates border for all elements, but skips the first one.
+                &:nth-child(1n+2) { /* Creates Dividing Borders for Mobile Links */
                     border-top: solid 2px $black;
                 }
             }
         }
-        #{ $self }__hamburger {
-            padding: 20px;
-        }
+    }
+    &__mobile-background { /* Mobile Background Element when Hamburger Button is Opened */
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        z-index: 1;
+        position: fixed;
+        background-color: rgba(31, 31, 31, 0.92);
     }
 }
 
@@ -483,7 +460,6 @@ a {
             margin: 0 5px;
         }
         &__title {
-            /* height: 100px; */
             width: 160px;
         }
         &__title-text {
@@ -518,7 +494,6 @@ a {
 
     .section {
         $self: &;
-        /* height: 640px; */
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -538,25 +513,14 @@ a {
             opacity: 1;
         }
         &--1 {
-            /* height: 710px; */
-            /* width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch; */
             #{ $self }__title {
                 width: calc(100vw - 60px);
                 font-size: 34px;
                 font-weight: 500;
                 font-family: "Jockey One", sans-serif;
-                /* font-family: "Graduate", sans-serif; */
-                /* letter-spacing: -3px; */
                 text-align: center;
                 margin: 60px 0 20px 0;
             }
-            /* #{ $self }__info {
-                margin: 0 0 40px 0;
-            } */
         }
         &--2 {
             scroll-margin: 90%;
@@ -791,8 +755,6 @@ a {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* font-size: 1.4rem;
-            line-height: 2.4rem; */
         }
         &__title {
             font-size: 48px;
@@ -831,7 +793,7 @@ a {
         }
     }
 
-    .animate2 {
+    .animate2 { /* Animation for Main Desktop Elements on the Left */
         will-change: transform;
         animation-name: slideIn-left;
         animation-duration: 1000ms;
@@ -844,7 +806,7 @@ a {
         -o-animation-name: slideIn-left;
         -o-animation-duration: 1000ms;
     }
-    .animate3 {
+    .animate3 { /* Animation for Main Desktop Elements on the Right */
         will-change: transform;
         animation-iteration-count: 1;
         animation-name: slideIn-right;
@@ -867,8 +829,7 @@ a {
  *  ^All Style Animations, Including
  *  ^Keyframes and Special Classes
  */
-/* Slide In From Top Animation */
-.animate-slideIn-top {
+.animate-slideIn-top { /* Slide In From Top Animation */
     will-change: transform;
     animation-name: slideIn-top;
     animation-duration: 600ms;
@@ -901,8 +862,7 @@ a {
         -webkit-transform: none;
     }
 }
-/* Slide In From Bottom Animation */
-.animate-slideIn-bottom {
+.animate-slideIn-bottom { /* Slide In From Bottom Animation */
     will-change: transform;
     animation-name: slideIn-bottom;
     animation-duration: 800ms;
@@ -918,7 +878,7 @@ a {
 @keyframes slideIn-bottom {
     0% {
         opacity: 0;
-        transform: translateY(30%);
+        transform: translateY(20%);
     }
     100% {
         opacity: 1;
@@ -928,15 +888,14 @@ a {
 @-webkit-keyframes slideIn-bottom {
     0% {
         opacity: 0;
-        -webkit-transform: translateY(30%);
+        -webkit-transform: translateY(20%);
     }
     100% {
         opacity: 1;
         -webkit-transform: none;
     }
 }
-/* Slide In From Left Animation */
-.animate-slideIn-left {
+.animate-slideIn-left { /* Slide In From Left Animation */
     will-change: transform;
     animation-name: slideIn-left;
     animation-duration: 1000ms;
@@ -969,8 +928,7 @@ a {
         -webkit-transform: none;
     }
 }
-/* Slide In From Right Animation */
-.animate-slideIn-right {
+.animate-slideIn-right { /* Slide In From Right Animation */
     will-change: transform;
     animation-iteration-count: 1;
     animation-name: slideIn-right;
@@ -986,21 +944,17 @@ a {
 }
 @keyframes slideIn-right {
     0% {
-        opacity: 0;
         transform: translate3d(100%, 0, 0);
     }
     100% {
-        opacity: 1;
         transform: none;
     }
 }
 @-webkit-keyframes slideIn-right {
     0% {
-        opacity: 0;
         -webkit-transform: translate3d(100%, 0, 0);
     }
     100% {
-        opacity: 1;
         -webkit-transform: none;
     }
 }
