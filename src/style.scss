@@ -314,9 +314,9 @@ a {
         }
     }
     &--2 {
-        /* #{ $self }__group {
+        #{ $self }__group {
             opacity: 0;
-        } */
+        }
         #{ $self }__title {
             color: $yellow;
             font-weight: 500;
