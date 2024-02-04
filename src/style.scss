@@ -81,7 +81,6 @@ a {
  */
 .spinner {
     height: 100%;
-    /* margin-top: 50%; */
     color: $yellow;
     font-size: 28px;
     display: flex;
@@ -119,8 +118,7 @@ a {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-    /* Navigation Logo and Company Title */
-    &__relink {
+    &__relink { /* Navigation Logo and Company Title */
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -139,8 +137,7 @@ a {
         color: $black;
         margin: 0;
     }
-    /* Responsive Hamburger Button for Mobile Users */
-    &__hamburger {
+    &__hamburger { /* Responsive Hamburger Button for Mobile Users */
         position: absolute;
         right: 0;
         display: flex;
@@ -177,8 +174,7 @@ a {
             }
         }
     }
-    /* Menu for Nav Links */
-    &__menu {
+    &__menu { /* Menu for Nav Links */
         height: 100%;
         display: flex;
         margin-left: auto;
@@ -199,8 +195,7 @@ a {
             transition: 150ms ease-in;
         }
     }
-    /* Mobile Modifier When Hamburger Button is Pressed, Menu is Opened*/
-    &__mobile-background {
+    &__mobile-background { /* Mobile Modifier When Hamburger Button is Pressed, Menu is Opened */
         height: 100vh;
         width: 100vw;
         top: 0;
@@ -275,7 +270,6 @@ a {
         max-width: 1200px;
         color: $background;
         font-size: 64px;
-        /* font-weight: 900; */
         font-family: "Graduate", sans-serif;
         letter-spacing: -2px;
         text-align: center;
@@ -298,7 +292,7 @@ a {
         font-family: "Jockey One";
         color: $grey;
         margin: 0;
-        /* opacity: 0; */
+        opacity: 0;
     }
     &__img {
         opacity: 0;
@@ -320,9 +314,9 @@ a {
         }
     }
     &--2 {
-        #{ $self }__group {
+        /* #{ $self }__group {
             opacity: 0;
-        }
+        } */
         #{ $self }__title {
             color: $yellow;
             font-weight: 500;
@@ -777,6 +771,9 @@ a {
                 font-family: "Jockey One", sans-serif;
                 text-align: center;
                 margin: 0 0 60px 0;
+            }
+            .about {
+                scroll-margin-top: 30vh;
             }
         }
     }
