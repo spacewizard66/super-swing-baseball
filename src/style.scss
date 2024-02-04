@@ -292,10 +292,10 @@ a {
         font-family: "Jockey One";
         color: $grey;
         margin: 0;
-        /* opacity: 0; */
+        opacity: 0;
     }
     &__img {
-        /* opacity: 0; */
+        opacity: 0;
     }
     &--1 {
         #{ $self }__title {
@@ -326,7 +326,7 @@ a {
         #{ $self }__info {
             font-family: "Jockey One", sans-serif;
             color: $grey;
-            /* opacity: 1; */
+            opacity: 1;
         }
     }
 }
