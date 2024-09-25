@@ -1,5 +1,5 @@
 {
-  "name": "Super Swing Baseball",
+  "name": "superswingbaseball",
   "version": "1.0.0",
   "main": "index.tsx",
   "browser": {
