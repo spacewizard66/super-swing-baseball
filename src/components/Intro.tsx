@@ -1,9 +1,8 @@
 import React from 'react';
-import '../style.scss';
 
 import bg from '../../public/img/interior.jpg';
 
-export default function Intro(): any {
+export default function Intro(): React.JSX.Element {
 
     // Background image styles, stored in a variable.
     // Necessary to import image for webpack processing.
@@ -19,10 +18,6 @@ export default function Intro(): any {
             className="intro"
             style={background}
         >
-            {/* <img
-                className="intro__image"
-                src="./img/interior.jpg"
-            ></img> */}
             <h1
                 className="intro__title animate1"
             >
@@ -30,4 +25,4 @@ export default function Intro(): any {
             </h1>
         </section>
     );
-}
+};

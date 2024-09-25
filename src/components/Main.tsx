@@ -1,10 +1,19 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import '../style.scss';
 
-export default function Main() {
+import teamKids from '../../public/img/team-kids.jpg';
+import field from '../../public/img/field.jpg';
+import team from '../../public/img/team.jpg';
+
+export default function Main(): React.JSX.Element {
+
+    type Options = {
+        triggerOnce: boolean;
+        threshold: number;
+    }
+
     // Declaring options for useInView() hook
-    const options = {
+    const options: Options = {
         triggerOnce: true,
         threshold: 0.5,
     }
@@ -41,8 +50,7 @@ export default function Main() {
                     <img
                         ref={section1ImgRef}
                         className={`section__img ${section1Img ? "animate3 animate1" : ""}`}
-                        /* className="section__img" */
-                        src="./img/team-kids.jpg"
+                        src={teamKids}
                         alt="Team">
                     </img>
                 </div>
@@ -51,8 +59,7 @@ export default function Main() {
                 <img
                     ref={section2ImgRef}
                     className={`section__img ${section2Img ? "animate2 animate1" : ""}`}
-                    /* className="section__img" */
-                    src="./img/field.jpg"
+                    src={field}
                     alt="Building Interior">
                 </img>
                 <div ref={section2InfoRef} className={`about section__group ${section2Info ? "animate3 animate1" : ""}`}>
@@ -78,11 +85,10 @@ export default function Main() {
                 <img
                     ref={section3ImgRef}
                     className={`section__img ${section3Img ? "animate3 animate1" : ""}`}
-                    /* className="section__img" */
-                    src="./img/team.webp"
+                    src={team}
                     alt="Field">
                 </img>
             </section>
         </main>
     );
-}
+};

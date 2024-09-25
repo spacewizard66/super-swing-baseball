@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
     /* Functions Get Current Year for Copyright Tag */
     var d = new Date();
-    var currYear = d.getFullYear();
+    var currYear: number = d.getFullYear();
 
     return (
         <footer className="footer">
@@ -49,4 +49,4 @@ export default function Footer() {
             </small>
         </footer>
     );
-}
+};

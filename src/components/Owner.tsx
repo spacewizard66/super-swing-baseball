@@ -4,7 +4,6 @@ export default function Owner(): React.JSX.Element {
 	return (
 		<section className="owner">
             <div className="owner__container">
-                {/* <img className="owner__img" src="./public/img/..." alt="Owner"></img> */}
                 <h2 className="owner__title">
                     John Bonatesta
                 </h2>
@@ -44,4 +43,4 @@ export default function Owner(): React.JSX.Element {
             </div>
 		</section>
 	);
-}
+};

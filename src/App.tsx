@@ -5,7 +5,9 @@ import Owner from './components/Owner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-export default function App() {
+import './style.scss';
+
+export default function App(): React.JSX.Element {
     // Brings viewport back to top of page on unload (refresh) to help animation effects
     window.onunload = () => {
         window.scrollTo(0, 0);
@@ -24,4 +26,4 @@ export default function App() {
             <Footer />
         </>
     );
-}
+};

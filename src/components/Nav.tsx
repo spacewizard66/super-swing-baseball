@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-export default function Nav() {
+import logo from '../../public/img/logo.jpg';
+
+export default function Nav(): React.JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
 
     // Function that toggles state (open/not open) of mobile nav menu
@@ -9,19 +11,19 @@ export default function Nav() {
     };
 
     // Smooth Scrolling Functions
-    let aboutScroll = (e) => { // Scrolls to About section of the page
+    let aboutScroll = (e: any) => { // Scrolls to About section of the page
         let about = document.getElementsByClassName("about");
         e.preventDefault();  // Stop Page Reloading
         about[0] && about[0].scrollIntoView({ behavior: "smooth", block: "start" });
         setIsOpen(false);
     }
-    let ownerScroll = (e) => { // Scrolls to Staff section of the page
+    let ownerScroll = (e: any) => { // Scrolls to Staff section of the page
         let owner = document.getElementsByClassName("owner");
         e.preventDefault();  // Stop Page Reloading
         owner[0] && owner[0].scrollIntoView({ behavior: "smooth", block: "start"  });
         setIsOpen(false);
     }
-    let footerScroll = (e) => { // Scrolls to Footer of the page
+    let footerScroll = (e: any) => { // Scrolls to Footer of the page
         let footer = document.getElementsByClassName("footer");
         e.preventDefault();  // Stop Page Reloading
         footer[0] && footer[0].scrollIntoView({ behavior: "smooth", block: "end"  });
@@ -33,7 +35,11 @@ export default function Nav() {
             <nav className="nav animate4">
                 <div className="nav__container">
                 <a className="nav__relink" href="/">
-                    <img className="nav__logo" src="./img/logo.jpg" alt="Company Logo"></img>
+                    <img
+                        className="nav__logo"
+                        alt="Company Logo"
+                        src={logo}
+                    ></img>
                     <section className="nav__title">
                         <h1 className="nav__title-text">
                             SUPER SWING BASEBALL
@@ -113,4 +119,4 @@ export default function Nav() {
             </nav>
         </header>
     );
-}
+};

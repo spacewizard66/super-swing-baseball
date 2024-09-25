@@ -34,4 +34,4 @@ export default function Contact(): React.JSX.Element {
             </section>
         </section>
     );
-}
+};
