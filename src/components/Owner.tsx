@@ -1,4 +1,6 @@
-export default function Owner() {
+import React from 'react';
+
+export default function Owner(): React.JSX.Element {
 	return (
 		<section className="owner">
             <div className="owner__container">
@@ -37,8 +39,7 @@ export default function Owner() {
                     Northern Cambria School District. He has been the Head Baseball
                     Coach at Northern Cambria for 7 years, and during the 2014
                     season, he led Northern Cambria to its first conference
-                    championship in 30 years.{/* John will be the Manager of AAABA
-                    Laurel Auto Group starting Summer 2018. */}
+                    championship in 30 years.
                 </p>
             </div>
 		</section>

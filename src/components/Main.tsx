@@ -32,7 +32,7 @@ export default function Main() {
                     Sports Training in Northern Cambria, PA
                 </h2>
                 <div className="section__group">
-                    <p ref={section1InfoRef} className={`${"section__info"} ${section1Info ? "animate2 animate-mobile" : ""}`}>
+                    <p ref={section1InfoRef} className={`${"section__info"} ${section1Info ? "animate2 animate1" : ""}`}>
                         &emsp;Here at Super Swing, our goal is to help develop players fundamentally
                         and make them successful on and off the field. We encourage players to do their best, 
                         and most importantly have fun! We are proud to offer detailed training in baseball/softball and how to apply
@@ -40,7 +40,7 @@ export default function Main() {
                     </p>
                     <img
                         ref={section1ImgRef}
-                        className={`section__img ${section1Img ? "animate3" : ""}`}
+                        className={`section__img ${section1Img ? "animate3 animate1" : ""}`}
                         /* className="section__img" */
                         src="./img/team-kids.jpg"
                         alt="Team">
@@ -50,12 +50,12 @@ export default function Main() {
             <section className="section section--2">
                 <img
                     ref={section2ImgRef}
-                    className={`section__img ${section2Img ? "animate2" : ""}`}
+                    className={`section__img ${section2Img ? "animate2 animate1" : ""}`}
                     /* className="section__img" */
                     src="./img/field.jpg"
                     alt="Building Interior">
                 </img>
-                <div ref={section2InfoRef} className={`about section__group ${section2Info ? "animate3 animate-mobile" : ""}`}>
+                <div ref={section2InfoRef} className={`about section__group ${section2Info ? "animate3 animate1" : ""}`}>
                     <h2 className="section__title">
                         About Us
                     </h2>
@@ -69,7 +69,7 @@ export default function Main() {
                 </div>
             </section>
             <section className="section section--3">
-                <p ref={section3InfoRef} className={`section__info ${section3Info ? "animate2 animate-mobile" : ""}`}>
+                <p ref={section3InfoRef} className={`section__info ${section3Info ? "animate2 animate1" : ""}`}>
                     &emsp;Discover the winning edge with our professional coaches 
                     who bring years of experience to every training session.
                     Train like a pro with cutting-edge techniques and proven strategies 
@@ -77,7 +77,7 @@ export default function Main() {
                 </p>
                 <img
                     ref={section3ImgRef}
-                    className={`section__img ${section3Img ? "animate3" : ""}`}
+                    className={`section__img ${section3Img ? "animate3 animate1" : ""}`}
                     /* className="section__img" */
                     src="./img/team.webp"
                     alt="Field">

@@ -30,9 +30,10 @@ export default function Nav() {
 
     return (
         <header>
-            <nav className="nav animate-slideIn-top">
+            <nav className="nav animate4">
+                <div className="nav__container">
                 <a className="nav__relink" href="/">
-                    <img className="nav__logo" href="#" src="./img/logo.jpg" alt="Company Logo"></img>
+                    <img className="nav__logo" src="./img/logo.jpg" alt="Company Logo"></img>
                     <section className="nav__title">
                         <h1 className="nav__title-text">
                             SUPER SWING BASEBALL
@@ -108,6 +109,7 @@ export default function Nav() {
                     </section>
                     )
                 }
+                </div>
             </nav>
         </header>
     );

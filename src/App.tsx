@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import LoadingSpinner from './components/LoadingSpinner.js';
-import Main from './components/Main.js';
-import Owner from './components/Owner.js';
-import Contact from './components/Contact.js';
-import Footer from './components/Footer.js';
+import LoadingSpinner from './components/LoadingSpinner';
+import Main from './components/Main';
+import Owner from './components/Owner';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
     // Brings viewport back to top of page on unload (refresh) to help animation effects
@@ -11,7 +11,7 @@ export default function App() {
         window.scrollTo(0, 0);
     }
 
-    const LazyLoaded = lazy(() => import('./components/Intro.js'))
+    const LazyLoaded = lazy(() => import('./components/Intro'))
 
     return (
         <>

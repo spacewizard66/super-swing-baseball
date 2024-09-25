@@ -1,10 +1,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jockey+One&display=swap"); // ***
 @import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap"); // ***
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Play&display=swap");
 
 /**
  *  ^VARIABLES/COLORS
@@ -44,17 +41,9 @@ body, #root {
     width: 100%;
     height: 100%;
     overflow: auto;
-}
-body {
     margin: 0;
     background-size: cover;
     background-color: $black;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overscroll-behavior-y: none;
-}
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 
@@ -91,38 +80,53 @@ code {
  */
 .nav {
     $self: &;
+    height: 70px;
     width: 100vw;
     top: 0;
     z-index: 2;
     margin: auto;
     position: fixed;
     background-color: $background;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    &__relink { /* Nav Logo and Company Title */
+    &__container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+
+    }
+    &__relink {
+        height: 70px;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    &__title { /* Nav Title Section */
+    &__logo {
+        height: 60px;
+        margin: 0 5px;
+    }
+    &__title {
+        width: 160px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    &__title-text { /* Nav Title */
+    &__title-text {
+        margin: 0;
+        color: $black;
+        font-size: 22px;
         font-weight: 700;
         font-family: "Graduate", sans-serif;
-        color: $black;
-        margin: 0;
+        line-height: 1.0;
+        letter-spacing: -1px;
+        word-spacing: 0px;
     }
-    &__menu { /* Menu for Desktop Nav Links */
+    &__menu {
         height: 100%;
-        display: flex;
-        margin-left: auto;
+        display: none;
     }
-    &__link { /* Nav Links */
+    &__link {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -132,10 +136,20 @@ code {
         font-weight: 500;
         font-family: "Jockey One";
         transition: 150ms ease-out;
-        &:hover { /* When Links are Hovered */
-            color: $yellow;
-            background-color: $black;
-            transition: 150ms ease-in;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            display: block;
+            transition: all 150ms ease;
+            bottom: 25%;
+        }
+        &:hover::after {
+            width: 80px;
+            height: 3px;
+            background-color: $yellow;
+            margin: auto;
         }
     }
     &__hamburger { /* Hamburger Div for Mobile Users */
@@ -151,7 +165,7 @@ code {
         border: none;
         cursor: pointer;
         padding: 20px;
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: center;
         & > * { /* All Hamburger Button Lines */
@@ -178,6 +192,7 @@ code {
     &--mobile { /* Nav Modifier for Mobile Devices */
         height: 400px;
         width: calc(100vw - 60px);
+        margin: 10px 30px 0 30px;
         border-radius: .75rem;
         background-color: rgba(219, 219, 219, 0.98);
         position: fixed;
@@ -197,7 +212,7 @@ code {
         -moz-animation-duration: 150ms;
         -o-animation-name: slideIn-right;
         -o-animation-duration: 150ms;
-        #{ $self }__menu-items { /* Mobile Menu List of Links */
+        #{ $self }__menu-items {
             height: 350px;
             width: 100%;
             margin: 0;
@@ -208,10 +223,14 @@ code {
             flex-direction: column;
             justify-content: stretch;
             align-items: center;
-            li { /* Mobile Link List Item Element */
+            li {
                 width: 100%;
                 &:nth-child(1n+2) { /* Creates Dividing Borders for Mobile Links */
                     border-top: solid 2px $black;
+                }
+                & a {
+                    width: 100%;
+                    height: 115.5px;
                 }
             }
         }
@@ -233,12 +252,14 @@ code {
  * ^Intro
  */
 .intro {
+    height: 460px;
+    margin: 70px 0 0 0;
     box-sizing: border-box;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../public/img/interior.jpg);
-    background-position: center;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../public/img/interior.jpg); */
+    /* background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -246,12 +267,17 @@ code {
     &__title {
         max-width: 1200px;
         color: $background;
-        font-size: 64px;
+        font-size: 44px;
         font-family: "Graduate", sans-serif;
         letter-spacing: -2px;
         text-align: center;
         animation-duration: 1600ms;
         opacity: 0;
+        /* box-shadow: 10px 10px 10px 10px #d6d7d9; */
+    }
+    &__image {
+        position: absolute;
+        z-index: 0;
     }
 }
 
@@ -263,16 +289,26 @@ code {
  */
 .section {
     $self: &;
-    margin: auto;
+    padding: 0 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     &__info {
         font-family: "Jockey One";
         color: $grey;
-        margin: 0;
         opacity: 0;
+        max-width: 500px;
+        font-size: 18px;
+        margin: 0 0 20px 0;
     }
     &__img {
         opacity: 0;
+        width: calc(100vw - 60px);
+        max-width: 460px;
+        max-height: 380px;
+        margin: 0 0 60px 0;
     }
     &--1 {
         #{ $self }__title {
@@ -317,15 +353,21 @@ code {
 .owner {
     color: $grey;
     background-color: black;
+    scroll-margin-top: 70px;
+    padding: 60px 25px;
     &__container {
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
     &__title {
         color: $yellow;
+        font-size: 44px;
+        margin: 0 0 20px 0;
+    }
+    &__p {
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        line-height: 1.1;
+        overflow-wrap: break-word;
     }
 }
 
@@ -336,33 +378,38 @@ code {
  * ^CONTACT SECTION
  */
 .contact {
-    height: 65vh;
     width: 100%;
+    padding: 60px 0;
     color: $grey;
-    background-color: $black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     &__title {
         color: $yellow;
-        font-size: 48px;
+        margin: 0;
+        font-size: 44px;
         font-weight: 500;
         font-family: "Jockey One", sans-serif;
-        text-align: center;
-        margin: 20px 0;
     }
     &__section {
         display: inline-flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
     &__group1, &__group2 {
-        width: 45%;
-        font-size: 22px;
-        line-height: 32px;
+        width: 100%;
+        font-size: 18px;
+        line-height: 28px;
         text-align: center;
+    }
+    &__times, &__details {
+        margin: 0;
+    }
+    &__times-title {
+        font-size: 23px;
+        font-weight: 600;
     }
     &__line {
         width: 230px;
@@ -377,10 +424,14 @@ code {
  * ^PAGE FOOTER
  */
 .footer {
-    width: 100%;
+    height: 340px;
     color: $background;
     background-color: black;
-    &__info { /* Footer Information Section */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    &__info {
         height: 160px;
         float: left;
         display: flex;
@@ -388,18 +439,17 @@ code {
         justify-content: space-between;
         align-items: flex-start;
     }
-    &__title { /* Footer Title */
+    &__title {
         color: $yellow;
         margin: 14px 0;
         font-family: "Play", sans-serif;
     }
-    &__link { /* Footer Links */
+    &__link {
         height: 22px;
         font-size: 20px;
         color: $background;
         font-family: "Play", sans-serif;
         text-decoration: underline transparent;
-        transition: all 0.2s ease-in-out;
         &:hover {
             color: $yellow;
             text-decoration: underline $yellow;
@@ -417,16 +467,30 @@ code {
                 content: "\f041";
         }
     }
-    &__copyright { /* Copyright Tag */
+    &__copyright {
         float: right;
         color: $background;
         margin: 0;
         text-align: center;
         font-family: "Play", sans-serif;
+        &__creator {
+            color: white;
+            font-family: "Play", sans-serif;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                color: $yellow;
+            }
+        }
     }
 }
 
-.animate1 {
+/* ======================================================================== */
+/* ======================================================================== */
+/**
+ * ^ANIMATION CLASSES
+ */
+.animate1 { /* Animation for Mobile; slides from Bottom */
     will-change: transform;
     animation-name: slideIn-bottom;
     animation-duration: 800ms;
@@ -439,7 +503,20 @@ code {
     -o-animation-name: slideIn-bottom;
     -o-animation-duration: 800ms;
 }
-
+.animate4 { /* Animation for Mobile; slides from Top */
+    will-change: transform;
+    animation-iteration-count: 1;
+    animation-name: slideIn-top;
+    animation-duration: 600ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideIn-top;
+    -webkit-animation-duration: 600ms;
+    -moz-animation-name: slideIn-top;
+    -moz-animation-duration: 600ms;
+    -o-animation-name: slideIn-top;
+    -o-animation-duration: 600ms;
+}
 
 
 
@@ -452,66 +529,9 @@ code {
  */
 /* For Mobile */
 @media only screen and (min-width: 30px) and (max-width: 849px) {
-    .nav {
-        $self: &;
-        height: 70px;
-        &__logo {
-            height: 60px;
-            margin: 0 5px;
-        }
-        &__title {
-            width: 160px;
-        }
-        &__title-text {
-            font-size: 22px;
-            line-height: 1.0;
-            letter-spacing: -1px;
-            word-spacing: 0px;
-        }
-        &__hamburger-button {
-            display: flex;
-        }
-        &__menu {
-            display: none;
-        }
-        &--mobile {
-            margin: 10px 30px 0 30px;
-            display: flex;
-            #{ $self }__link {
-                width: 100%;
-                height: 115.5px;
-            }
-        }
-    }
-
-    .intro {
-        height: 460px;
-        margin: 70px 0 0 0;
-        &__title {
-            font-size: 44px;
-        }
-    }
 
     .section {
         $self: &;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        &__info {
-            width: calc(100vw - 60px);
-            max-width: 500px;
-            font-size: 20px;
-            margin: 0 0 60px 0;
-        }
-        &__img {
-            width: calc(100vw - 60px);
-            max-width: 460px;
-            max-height: 380px;
-            margin: 0 0 60px 0;
-            opacity: 1;
-        }
         &--1 {
             #{ $self }__title {
                 width: calc(100vw - 60px);
@@ -544,111 +564,27 @@ code {
             }
         }
     }
-
-    .owner {
-        scroll-margin-top: 70px;
-        padding: 40px 25px 60px 25px;
-        &__container {
-            height: 100%;
-            font-size: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        &__title {
-            font-size: 44px;
-            margin: 0 auto 22px 0;
-        }
-        &__p {
-            width: 100%;
-            margin: 0 0 22px 0;
-            font-size: 18px;
-            line-height: 1.2;
-            overflow-wrap: break-word;
-        }
-    }
-
-    .contact {
-        height: 340px;
-        width: 100%;
-        padding: 40px 0 60px 0;
-        background-color: $black;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        &__title {
-            color: $yellow;
-            font-size: 44px;
-            font-weight: 500;
-            font-family: "Jockey One", sans-serif;
-            text-align: center;
-            margin: 0;
-        }
-        &__section {
-            width: 90%;
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
-        &__group1, &__group2 {
-            width: 100%;
-            font-size: 18px;
-            line-height: 28px;
-            text-align: center;
-        }
-        &__times-title {
-            font-size: 23px;
-            font-weight: 600;
-        }
-        &__times, &__details {
-            margin: 0;
-        }
-    }
-
-    .footer {
-        height: 340px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        &__info {
-            font-size: 16px;
-        }
-        &__copyright {
-            width: 90%;
-        }
-    }
-
-    .animate-mobile {
-        will-change: transform;
-        animation-name: slideIn-bottom;
-        animation-duration: 800ms;
-        animation-timing-function: ease;
-        animation-fill-mode: both;
-        -webkit-animation-name: slideIn-bottom;
-        -webkit-animation-duration: 800ms;
-        -moz-animation-name: slideIn-bottom;
-        -moz-animation-duration: 800ms;
-        -o-animation-name: slideIn-bottom;
-        -o-animation-duration: 800ms;
-    }
 }
 
 
 
+
+/**
+ *  ^Media Queries that Specify Certain Screen Sizes.
+ *  ^This Allows For Responsive Design and different layout styles.
+ */
 /* For Desktop */ /* ====================================================== */
 @media only screen and (min-width: 850px) {
     .nav {
-        height: 100px;
+        height: 80px;
+        &__relink {
+            height: 100%;
+        }
         &__logo {
-            height: 90px;
-            margin-left: 20px;
-            margin-right: 20px;
+            height: 80px;
+            margin: 0 20px;
         }
         &__title {
-            height: 100px;
             width: 220px;
         }
         &__title-text {
@@ -660,32 +596,39 @@ code {
             display: none;
         }
         &__menu {
-            min-width: 500px;
-            width: 100%;
+            height: 80px;
+            width: 30%;
+            /* min-width: 500px; */
             max-width: 700px;
+            display: flex;
         }
         &__link {
-            width: 33.33%;
-            height: 100%;
-        }
-        &--mobile {
-            margin: 26px 30px 0 30px;
+            width: 33.3%;
+            text-align: center;
         }
     }
 
     .intro {
         height: 630px;
-        margin: 100px 0 0 0;
+        margin: 80px 0 0 0;
+        &__title {
+            font-size: 64px;
+        }
     }
 
     .section {
         $self: &;
+        margin: auto;
         height: 600px;
         max-width: 1200px;
+        padding: 0;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        &__group {
+            /* max-width: 1200px; */
+        }
         &__info {
             width: calc((100vw - 60px) / 2.25);
             max-width: 500px;
@@ -699,33 +642,33 @@ code {
             max-width: 500px;
             width: calc((100vw - 60px) / 2.25);
             max-height: 460px;
+            margin: 0;
         }
         &--1 {
             height: 660px;
-            width: 100%;
+            /* width: 100%; */
+            /* max-width: 1200px; */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: stretch;
+            align-items: center;
             #{ $self }__title {
                 height: 50px;
                 font-size: 48px;
                 font-weight: 500;
                 font-family: "Jockey One", sans-serif;
                 text-align: center;
-                margin: 0 0 60px 0;
+                margin: 0 0 100px 0;
             }
             #{ $self }__group {
+                width: 100%;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
             }
         }
         &--2 {
-            #{ $self }__group {
-                opacity: 0;
-            }
             #{ $self }__title {
                 height: 50px;
                 font-size: 48px;
@@ -733,6 +676,9 @@ code {
                 font-family: "Jockey One", sans-serif;
                 text-align: center;
                 margin: 0 0 60px 0;
+            }
+            #{ $self }__group {
+                opacity: 0;
             }
             .about {
                 scroll-margin-top: 30vh;
@@ -772,10 +718,10 @@ code {
     }
 
     .contact {
-        height: 40vh;
         &__section {
             width: 760px;
             height: 200px;
+            flex-direction: row;
         }
     }
 
@@ -793,55 +739,44 @@ code {
         }
     }
 
-    .animate2 { /* Animation for Main Desktop Elements on the Left */
+    .animate2 { /* Animation for Desktop; slides from Left */
         will-change: transform;
         animation-name: slideIn-left;
-        animation-duration: 1000ms;
+        animation-duration: 600ms;
         animation-timing-function: ease;
         animation-fill-mode: both;
         -webkit-animation-name: slideIn-left;
-        -webkit-animation-duration: 1000ms;
+        -webkit-animation-duration: 600ms;
         -moz-animation-name: slideIn-left;
-        -moz-animation-duration: 1000ms;
+        -moz-animation-duration: 600ms;
         -o-animation-name: slideIn-left;
-        -o-animation-duration: 1000ms;
+        -o-animation-duration: 600ms;
     }
-    .animate3 { /* Animation for Main Desktop Elements on the Right */
+    .animate3 { /* Animation for Desktop; slides from Right */
         will-change: transform;
         animation-iteration-count: 1;
         animation-name: slideIn-right;
-        animation-duration: 1000ms;
+        animation-duration: 600ms;
         animation-timing-function: ease;
         animation-fill-mode: both;
         -webkit-animation-name: slideIn-right;
-        -webkit-animation-duration: 1000ms;
+        -webkit-animation-duration: 600ms;
         -moz-animation-name: slideIn-right;
-        -moz-animation-duration: 1000ms;
+        -moz-animation-duration: 600ms;
         -o-animation-name: slideIn-right;
-        -o-animation-duration: 1000ms;
+        -o-animation-duration: 600ms;
     }
 }
+
 
 
 
 /* ======================================================================== */
+/* ======================================================================== */
 /**
- *  ^All Style Animations, Including
- *  ^Keyframes and Special Classes
+ *  ^All Style Animations / Keyframes
  */
-.animate-slideIn-top { /* Slide In From Top Animation */
-    will-change: transform;
-    animation-name: slideIn-top;
-    animation-duration: 600ms;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideIn-top;
-    -webkit-animation-duration: 600ms;
-    -moz-animation-name: slideIn-top;
-    -moz-animation-duration: 600ms;
-    -o-animation-name: slideIn-top;
-    -o-animation-duration: 600ms;
-}
+/* Slide from Top */
 @keyframes slideIn-top {
     0% {
         opacity: 0;
@@ -862,19 +797,8 @@ code {
         -webkit-transform: none;
     }
 }
-.animate-slideIn-bottom { /* Slide In From Bottom Animation */
-    will-change: transform;
-    animation-name: slideIn-bottom;
-    animation-duration: 800ms;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideIn-bottom;
-    -webkit-animation-duration: 800ms;
-    -moz-animation-name: slideIn-bottom;
-    -moz-animation-duration: 800ms;
-    -o-animation-name: slideIn-bottom;
-    -o-animation-duration: 800ms;
-}
+
+/* Slide from Bottom */
 @keyframes slideIn-bottom {
     0% {
         opacity: 0;
@@ -895,23 +819,12 @@ code {
         -webkit-transform: none;
     }
 }
-.animate-slideIn-left { /* Slide In From Left Animation */
-    will-change: transform;
-    animation-name: slideIn-left;
-    animation-duration: 1000ms;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideIn-left;
-    -webkit-animation-duration: 1000ms;
-    -moz-animation-name: slideIn-left;
-    -moz-animation-duration: 1000ms;
-    -o-animation-name: slideIn-left;
-    -o-animation-duration: 1000ms;
-}
+
+/* Slide from Left */
 @keyframes slideIn-left {
     0% {
         opacity: 0;
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-60%, 0, 0);
     }
     100% {
         opacity: 1;
@@ -921,31 +834,19 @@ code {
 @-webkit-keyframes slideIn-left {
     0% {
         opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
+        -webkit-transform: translate3d(-60%, 0, 0);
     }
     100% {
         opacity: 1;
         -webkit-transform: none;
     }
 }
-.animate-slideIn-right { /* Slide In From Right Animation */
-    will-change: transform;
-    animation-iteration-count: 1;
-    animation-name: slideIn-right;
-    animation-duration: 1000ms;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-    -webkit-animation-name: slideIn-right;
-    -webkit-animation-duration: 1000ms;
-    -moz-animation-name: slideIn-right;
-    -moz-animation-duration: 1000ms;
-    -o-animation-name: slideIn-right;
-    -o-animation-duration: 1000ms;
-}
+
+/* Slide from Right */
 @keyframes slideIn-right {
     0% {
         opacity: 0;
-        transform: translate3d(100%, 0, 0);
+        transform: translate3d(60%, 0, 0);
     }
     100% {
         opacity: 1;
@@ -955,7 +856,7 @@ code {
 @-webkit-keyframes slideIn-right {
     0% {
         opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
+        -webkit-transform: translate3d(60%, 0, 0);
     }
     100% {
         opacity: 1;
