@@ -15,7 +15,7 @@ export default function Main(): React.JSX.Element {
     // Declaring options for useInView() hook
     const options: Options = {
         triggerOnce: true,
-        threshold: 0.5,
+        threshold: 0.2,
     }
 
     // useInView hooks that returns a boolean
